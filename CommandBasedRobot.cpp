@@ -5,36 +5,36 @@
 class CommandBasedRobot : public IterativeRobot
 {
 private:
-    LiveWindow *lw;
+  LiveWindow *lw;
 
-    virtual void RobotInit()
-    {
-        CommandBase::init();
-        lw = LiveWindow::GetInstance();
-    }
+  virtual void RobotInit()
+  {
+    CommandBase::init();
+    lw = LiveWindow::GetInstance();
+  }
 
-    virtual void AutonomousInit()
-    {
-    }
+  virtual void AutonomousInit()
+  {
+  }
 
-    virtual void AutonomousPeriodic()
-    {
-        Scheduler::GetInstance()->Run();
-    }
+  virtual void AutonomousPeriodic()
+  {
+    Scheduler::GetInstance()->Run();
+  }
 
-    virtual void TeleopInit()
-    {
-    }
+  virtual void TeleopInit()
+  {
+  }
 
-    virtual void TeleopPeriodic()
-    {
-        Scheduler::GetInstance()->Run();
-    }
+  virtual void TeleopPeriodic()
+  {
+    Scheduler::GetInstance()->Run();
+  }
 
-    virtual void TestPeriodic()
-    {
-        lw->Run();
-    }
+  virtual void TestPeriodic()
+  {
+    lw->Run();
+  }
 };
 
 START_ROBOT_CLASS(CommandBasedRobot);

@@ -2,5 +2,5 @@
 
 OI::OI()
 {
-    // Process operator interface input here.
+  // Process operator interface input here.
 }

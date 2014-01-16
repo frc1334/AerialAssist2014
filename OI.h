@@ -8,7 +8,7 @@ class OI
 private:
 
 public:
-    OI();
+  OI();
 };
 
 #endif

@@ -8,8 +8,8 @@ CatapultSubsystem::CatapultSubsystem() : Subsystem("CatapultSubsystem")
 
 void CatapultSubsystem::InitDefaultCommand()
 {
-    // Set the default command for a subsystem here.
-    //SetDefaultCommand(new MySpecialCommand());
+  // Set the default command for a subsystem here.
+  //SetDefaultCommand(new MySpecialCommand());
 }
 
 
