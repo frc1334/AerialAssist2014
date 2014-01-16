@@ -1,7 +1,8 @@
 #include "DriveTrainSubsystem.h"
 #include "../Robotmap.h"
 
-DriveTrainSubsystem::DriveTrainSubsystem() : Subsystem("DriveTrainSubsystem")
+DriveTrainSubsystem::DriveTrainSubsystem()
+    : Subsystem("DriveTrainSubsystem"), left1(1), right1(2), left2(3), right2(4)
 {
 
 }
