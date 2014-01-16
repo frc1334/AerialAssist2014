@@ -1,13 +1,15 @@
 #include "DriveTrainSubsystem.h"
 #include "../Robotmap.h"
 
-DriveTrainSubsystem::DriveTrainSubsystem() : Subsystem("DriveTrainSubsystem") {
+DriveTrainSubsystem::DriveTrainSubsystem() : Subsystem("DriveTrainSubsystem")
+{
 
 }
 
-void DriveTrainSubsystem::InitDefaultCommand() {
-	// Set the default command for a subsystem here.
-	//SetDefaultCommand(new MySpecialCommand());
+void DriveTrainSubsystem::InitDefaultCommand()
+{
+    // Set the default command for a subsystem here.
+    //SetDefaultCommand(new MySpecialCommand());
 }
 
 void DriveTrainSubsystem::tankDrive(float left, float right)
@@ -21,7 +23,7 @@ void DriveTrainSubsystem::tankDrive(float left, float right)
 void DriveTrainSubsystem::arcadeDrive(float drive, float turn)
 {
     left1.Set(-(drive - turn));
-	left2.Set(-(drive - turn));
-	right1.Set(drive + turn);
-	right2.Set(drive + turn);
+    left2.Set(-(drive - turn));
+    right1.Set(drive + turn);
+    right2.Set(drive + turn);
 }
