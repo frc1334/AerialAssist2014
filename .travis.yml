@@ -1,11 +1,14 @@
 language: cpp
 compiler:
   - gcc
-before_script:
+cache:
+  apt: true
+  directories:
+    - ./ucpp-master
+install:
   - sudo apt-get update -qq
   - sudo apt-get install -qq wine
-  - curl -L -o ./master.zip  https://github.com/nikitakit/ucpp/archive/master.zip
-  - unzip -o ./master.zip
+  - if [ ! -d "./ucpp-master" ]; then curl -L -o ./master.zip  https://github.com/nikitakit/ucpp/archive/master.zip && unzip -o ./master.zip; fi
 env:
   - PATH=$PATH:./ucpp-master/ucpp
 script: ucpp setup -t 1334 && ucpp init && ucpp configure py && make
