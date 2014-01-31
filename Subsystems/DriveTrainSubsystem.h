@@ -7,9 +7,9 @@
 class DriveTrainSubsystem: public Subsystem
 {
 private:
-  Talon left1, left2, left3;
-  Talon right1, right2, right3;
-  Solenoid shifter;
+  Talon* left1, left2, left3;
+  Talon* right1, right2, right3;
+  Solenoid* shifter;
 public:
   DriveTrainSubsystem();
   void InitDefaultCommand();

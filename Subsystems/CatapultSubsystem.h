@@ -7,8 +7,8 @@
 class CatapultSubsystem: public Subsystem
 {
 private:
-  Talon winch1, winch2;
-  Solenoid tilt, midlock, winchgear;
+  Talon* winch1, winch2;
+  Solenoid* tilt, midlock, winchgear;
 public:
   CatapultSubsystem();
   void InitDefaultCommand();

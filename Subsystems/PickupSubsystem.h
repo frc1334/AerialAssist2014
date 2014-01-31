@@ -7,8 +7,8 @@
 class PickupSubsystem: public Subsystem
 {
 private:
-  Talon pick;
-  Solenoid state;
+  Talon* pick;
+  Solenoid* state;
 public:
   PickupSubsystem();
   void InitDefaultCommand();

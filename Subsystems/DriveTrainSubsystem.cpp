@@ -2,9 +2,15 @@
 #include "../Robotmap.h"
 
 DriveTrainSubsystem::DriveTrainSubsystem()
-  : Subsystem("DriveTrainSubsystem"), left1(LEFT_TALON_1), left2(LEFT_TALON_2), left3(LEFT_TALON_3), right1(RIGHT_TALON_1), right1(RIGHT_TALON_2), right1(RIGHT_TALON_3), shifter(DRIVE_SOLENOID)
+  : Subsystem("DriveTrainSubsystem")
 {
-
+	left1 = new Talon(LEFT_TALON_1);
+	left2 = new Talon(LEFT_TALON_2);
+	left3 = new Talon(LEFT_TALON_3);
+	right1 = new Talon(RIGHT_TALON_1);
+	right2 = new Talon(RIGHT_TALON_2);
+	right3 = new Talon(RIGHT_TALON_3);
+	shifter = new Solenoid(DRIVE_SOLENOID);
 }
 
 void DriveTrainSubsystem::InitDefaultCommand()
