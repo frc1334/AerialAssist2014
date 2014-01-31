@@ -11,13 +11,8 @@
 class DriveTrainSubsystem: public Subsystem
 {
 private:
-  // It's desirable that everything possible under private except
-  // for methods that implement subsystem capabilities
-
-  Jaguar left1;
-  Jaguar left2;
-  Jaguar right1;
-  Jaguar right2;
+  Talon left1, left2, left3;
+  Talon right1, right2, right3;
 
 public:
   DriveTrainSubsystem();
