@@ -8,13 +8,20 @@
  * floating around.
  */
 
-#define LEFT_TALON_1 -1
-#define LEFT_TALON_2 -1
-#define LEFT_TALON_3 -1
-#define RIGHT_TALON_1 -1
-#define RIGHT_TALON_2 -1
-#define RIGHT_TALON_3 -1
+#define LEFT_TALON_1			-1
+#define LEFT_TALON_2			-1
+#define LEFT_TALON_3			-1
+#define RIGHT_TALON_1			-1
+#define RIGHT_TALON_2			-1
+#define RIGHT_TALON_3			-1
 
-#define DRIVE_SOLENOID -1
+#define WINCH_TALON_1			-1
+#define WINCH_TALON_2			-1
+
+#define DRIVE_SOLENOID			-1
+
+#define TILT_SOLENOID			-1
+#define MIDLOCK_SOLENOID		-1
+#define WINCH_GEARBOX_SOLENOID	-1
 
 #endif
