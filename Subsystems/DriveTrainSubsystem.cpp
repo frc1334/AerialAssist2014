@@ -2,7 +2,7 @@
 #include "../Robotmap.h"
 
 DriveTrainSubsystem::DriveTrainSubsystem()
-  : Subsystem("DriveTrainSubsystem"), left1(LEFT_TALON_1), left2(LEFT_TALON_2), left3(LEFT_TALON_3), right1(RIGHT_TALON_1), right1(RIGHT_TALON_2), right1(RIGHT_TALON_3)
+  : Subsystem("DriveTrainSubsystem"), left1(LEFT_TALON_1), left2(LEFT_TALON_2), left3(LEFT_TALON_3), right1(RIGHT_TALON_1), right1(RIGHT_TALON_2), right1(RIGHT_TALON_3), shifter(DRIVE_SOLENOID)
 {
 
 }
@@ -30,4 +30,9 @@ void DriveTrainSubsystem::arcadeDrive(float drive, float turn)
   right1.Set(drive + turn);
   right2.Set(drive + turn);
   right3.Set(drive + turn);
+}
+
+void DriveTrainSubsystem::shift(bool highGear)
+{
+	shifter.Set(highGear);
 }

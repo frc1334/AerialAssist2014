@@ -15,4 +15,6 @@
 #define RIGHT_TALON_2 -1
 #define RIGHT_TALON_3 -1
 
+#define DRIVE_SOLENOID -1
+
 #endif
