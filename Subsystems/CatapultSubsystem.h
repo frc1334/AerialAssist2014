@@ -7,7 +7,7 @@
 class CatapultSubsystem: public Subsystem
 {
 private:
-  Talon* winch1
+  Talon* winch1;
   Talon* winch2;
   Solenoid* tilt;
   Solenoid* midlock;
