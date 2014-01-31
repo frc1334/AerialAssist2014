@@ -7,8 +7,12 @@
 class DriveTrainSubsystem: public Subsystem
 {
 private:
-  Talon* left1, left2, left3;
-  Talon* right1, right2, right3;
+  Talon* left1;
+  Talon* left2;
+  Talon* left3;
+  Talon* right1;
+  Talon* right2;
+  Talon* right3;
   Solenoid* shifter;
 public:
   DriveTrainSubsystem();
