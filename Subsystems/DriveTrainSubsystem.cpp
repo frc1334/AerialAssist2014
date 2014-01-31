@@ -20,22 +20,22 @@ void DriveTrainSubsystem::InitDefaultCommand()
 
 void DriveTrainSubsystem::tankDrive(float left, float right)
 {
-  left1.Set(-(left));
-  left2.Set(-(left));
-  left2.Set(-(left));
-  right1.Set(right);
-  right2.Set(right);
-  right2.Set(right);
+  left1->Set(-(left));
+  left2->Set(-(left));
+  left2->Set(-(left));
+  right1->Set(right);
+  right2->Set(right);
+  right2->Set(right);
 }
 
 void DriveTrainSubsystem::arcadeDrive(float drive, float turn)
 {
-  left1.Set(-(drive - turn));
-  left2.Set(-(drive - turn));
-  left3.Set(-(drive - turn));
-  right1.Set(drive + turn);
-  right2.Set(drive + turn);
-  right3.Set(drive + turn);
+  left1->Set(-(drive - turn));
+  left2->Set(-(drive - turn));
+  left3->Set(-(drive - turn));
+  right1->Set(drive + turn);
+  right2->Set(drive + turn);
+  right3->Set(drive + turn);
 }
 
 void DriveTrainSubsystem::shift(bool highGear)
