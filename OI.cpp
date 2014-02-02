@@ -1,6 +1,5 @@
 #include "OI.h"
 
-OI::OI()
+OI::OI() : drive(1), operator(2)
 {
-  // Process operator interface input here.
 }

@@ -1,31 +1,32 @@
 #include "XboxDriveCommand.h"
 
-XboxDriveCommand::XboxDriveCommand() {
-	// Use requires() here to declare subsystem dependencies
-	// eg. requires(chassis);
+XboxDriveCommand::XboxDriveCommand()
+{
+  requires(drivetrain);
 }
 
-// Called just before this Command runs the first time
-void XboxDriveCommand::Initialize() {
-	
+void XboxDriveCommand::Initialize()
+{
 }
 
-// Called repeatedly when this Command is scheduled to run
-void XboxDriveCommand::Execute() {
-	
+void XboxDriveCommand::Execute()
+{
+  drivetrain->arcadeDrive(oi->getDrive(), oi->getTurn());
 }
 
-// Make this return true when this Command no longer needs to run execute()
-bool XboxDriveCommand::IsFinished() {
-	return false;
+bool XboxDriveCommand::IsFinished()
+{
+  return false; // default command; never finished
 }
 
-// Called once after isFinished returns true
-void XboxDriveCommand::End() {
-	
+void XboxDriveCommand::End()
+{
 }
 
-// Called when another command which requires one or more of the same
-// subsystems is scheduled to run
-void XboxDriveCommand::Interrupted() {
+void XboxDriveCommand::Interrupted()
+{
+  // will not be interrupted
+  // command runs during teleop
+  // all other drive commands run
+  // during auto
 }
