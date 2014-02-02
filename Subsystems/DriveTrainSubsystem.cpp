@@ -41,5 +41,5 @@ void DriveTrainSubsystem::arcadeDrive(float drive, float turn)
 
 void DriveTrainSubsystem::shift(bool highGear)
 {
-	shifter.Set(highGear);
+  shifter->Set(highGear);
 }
