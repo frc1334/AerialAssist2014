@@ -7,13 +7,13 @@
 class OI
 {
 private:
-  Joystick* drive;
-  Joystick* operator;
+  Joystick* joystickDrive;
+  Joystick* joystickOperator;
 public:
   OI();
 
-  inline float getDrive() { return addDeadZone(drive->GetX(), 0.15f); } // TODO: map
-  inline float getTurn()  { return addDeadZone(drive->GetY(), 0.15f); } // TODO: map
+  inline float getDrive() { return addDeadZone(joystickDrive->GetX(), 0.15f); } // TODO: map
+  inline float getTurn()  { return addDeadZone(joystickDrive->GetY(), 0.15f); } // TODO: map
 
   inline float addDeadZone(float original, float deadzone)
   {

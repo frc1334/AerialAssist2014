@@ -1,5 +1,7 @@
 #include "OI.h"
 
-OI::OI() : drive(1), operator(2)
+OI::OI()
 {
+  joystickDrive = new Joystick(1);
+  joystickOperator = new Joystick(2);
 }

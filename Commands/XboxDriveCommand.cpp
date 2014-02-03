@@ -2,7 +2,7 @@
 
 XboxDriveCommand::XboxDriveCommand()
 {
-  requires(drivetrain);
+  Requires(drivetrain);
 }
 
 void XboxDriveCommand::Initialize()
