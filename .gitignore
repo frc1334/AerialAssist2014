@@ -13,3 +13,6 @@
 *.a
 
 PPC603gnu
+ucpp-master
+.ucpp
+Makefile
