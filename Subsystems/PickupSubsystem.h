@@ -12,6 +12,8 @@ private:
 public:
   PickupSubsystem();
   void InitDefaultCommand();
+
+  void setPickup(bool pickup);
 };
 
 #endif

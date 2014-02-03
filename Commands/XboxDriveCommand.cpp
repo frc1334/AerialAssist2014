@@ -11,7 +11,11 @@ void XboxDriveCommand::Initialize()
 
 void XboxDriveCommand::Execute()
 {
-  drivetrain->arcadeDrive(oi->getDrive(), oi->getTurn());
+  drivetrain->arcadeDrive(oi->drive(), oi->turn());
+  if (oi->shiftHigh())
+    drivetrain->shift(true);
+  if (oi->shiftLow())
+    drivetrain->shift(false);
 }
 
 bool XboxDriveCommand::IsFinished()

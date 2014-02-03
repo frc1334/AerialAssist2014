@@ -1,12 +1,12 @@
-#ifndef XBOXDRIVECOMMAND_H
-#define XBOXDRIVECOMMAND_H
+#ifndef TELEOPPICKUPCOMMAND_H
+#define TELEOPPICKUPCOMMAND_H
 
 #include "../CommandBase.h"
 
-class XboxDriveCommand: public CommandBase
+class TeleopPickupCommand: public CommandBase
 {
 public:
-  XboxDriveCommand();
+  TeleopPickupCommand();
   virtual void Initialize();
   virtual void Execute();
   virtual bool IsFinished();

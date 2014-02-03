@@ -12,8 +12,12 @@ private:
 public:
   OI();
 
-  inline float getDrive() { return addDeadZone(joystickDrive->GetX(), 0.15f); } // TODO: map
-  inline float getTurn()  { return addDeadZone(joystickDrive->GetY(), 0.15f); } // TODO: map
+  inline float drive()     { return addDeadZone(joystickDrive->GetRawAxis(-1), 0.15f); }
+  inline float turn()      { return addDeadZone(joystickDrive->GetRawAxis(-1), 0.15f); }
+  inline bool  shiftHigh() { return joystickDrive->GetRawButton(-1); }
+  inline bool  shiftLow()  { return joystickDrive->GetRawButton(-1); }
+  inline bool  runPickup() { return joystickDrive->GetRawButton(-1); }
+
 
   inline float addDeadZone(float original, float deadzone)
   {
