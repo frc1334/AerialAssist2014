@@ -10,9 +10,19 @@ void XboxDriveCommand::Initialize() {
 	
 }
 
+<<<<<<< HEAD
 // Called repeatedly when this Command is scheduled to run
 void XboxDriveCommand::Execute() {
 	
+=======
+void XboxDriveCommand::Execute()
+{
+  drivetrain->arcadeDrive(oi->drive(), oi->turn());
+  if (oi->shiftHigh())
+    drivetrain->shift(true);
+  if (oi->shiftLow())
+    drivetrain->shift(false);
+>>>>>>> eeb8275... Finished drivetrain and createdpickup command
 }
 
 // Make this return true when this Command no longer needs to run execute()
