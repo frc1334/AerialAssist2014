@@ -246,12 +246,12 @@
     <buildtargets>
         <buildtarget buildtool="Linker" name="CommandBasedRobotTemplate" passed="false" targetname="CommandBasedRobotTemplate">
             <contents>
-                <buildtargetreference name="/CommandBasedRobotTemplate/CommandBasedRobotTemplate_partialImage"/>
+                <buildtargetreference name="/AerialAssist2014/CommandBasedRobotTemplate_partialImage"/>
             </contents>
         </buildtarget>
         <buildtarget buildtool="Partial Image Linker" name="CommandBasedRobotTemplate_partialImage" passed="true" targetname="CommandBasedRobotTemplate_partialImage">
             <contents>
-                <folder name="/CommandBasedRobotTemplate" recursive="true"/>
+                <folder name="/AerialAssist2014" recursive="true"/>
             </contents>
         </buildtarget>
     </buildtargets>
