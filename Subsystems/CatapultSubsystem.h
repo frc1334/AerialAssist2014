@@ -14,10 +14,10 @@ private:
   Solenoid* winchgear;
 public:
   enum CatapultAngle { HighShot, LowShot, Pickup, Catch };
-  
+
   CatapultSubsystem();
   void InitDefaultCommand();
-  
+
   void setAngle(CatapultAngle angle);
   void setWinch(float speed);
   void setWinchGear(bool gear);

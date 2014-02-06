@@ -14,7 +14,7 @@ public:
   CommandBase(const char* name);
   CommandBase();
   static void init();
-  
+
   static VisionSubsystem* vision;
   static CatapultSubsystem* catapult;
   static DriveTrainSubsystem* drivetrain;

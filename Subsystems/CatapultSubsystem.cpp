@@ -16,31 +16,31 @@ void CatapultSubsystem::InitDefaultCommand()
 
 void CatapultSubsystem::setAngle(CatapultAngle angle)
 {
-	switch (angle)
-	{
-	case Catch:
-	case HighShot:
-		tilt->Set(false);
-		midlock->Set(false);
-		break;
-	case LowShot:
-		tilt->Set(true);
-		midlock->Set(true);
-		break;
-	case Pickup:
-		tilt->Set(true);
-		midlock->Set(false);
-		break;
-	}
+  switch (angle)
+  {
+  case Catch:
+  case HighShot:
+    tilt->Set(false);
+    midlock->Set(false);
+    break;
+  case LowShot:
+    tilt->Set(true);
+    midlock->Set(true);
+    break;
+  case Pickup:
+    tilt->Set(true);
+    midlock->Set(false);
+    break;
+  }
 }
 
 void CatapultSubsystem::setWinch(float speed)
 {
-	winch1->Set(speed);
-	winch2->Set(speed);
+  winch1->Set(speed);
+  winch2->Set(speed);
 }
 
 void CatapultSubsystem::setWinchGear(bool gear)
 {
-	winchgear->Set(gear);
+  winchgear->Set(gear);
 }
