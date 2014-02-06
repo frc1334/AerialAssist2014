@@ -9,12 +9,18 @@ class CatapultSubsystem: public Subsystem
 private:
   Talon* winch1;
   Talon* winch2;
-  Solenoid* tilt;
-  Solenoid* midlock;
+  Solenoid* tilt;		//P1
+  Solenoid* midlock;	//P2
   Solenoid* winchgear;
 public:
+  enum CatapultAngle { HighShot, LowShot, Pickup, Catch };
+  
   CatapultSubsystem();
   void InitDefaultCommand();
+  
+  void setAngle(CatapultAngle angle);
+  void setWinch(float speed);
+  void setWinchGear(bool gear);
 };
 
 #endif
