@@ -14,9 +14,9 @@ void CatapultSubsystem::InitDefaultCommand()
 {
 }
 
-void CatapultSubsystem::setAngle(CatapultAngle angle)
+void CatapultSubsystem::setState(ShootState state)
 {
-  switch (angle)
+  switch (state)
   {
   case Catch:
   case HighShot:

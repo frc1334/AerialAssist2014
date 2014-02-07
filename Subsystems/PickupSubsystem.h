@@ -7,13 +7,19 @@
 class PickupSubsystem: public Subsystem
 {
 private:
-  Talon* pick;
-  Solenoid* state;
+  Talon* roller;
+  Solenoid* extension;
+  Solenoid* tilt;
+  Solenoid* side;
 public:
   PickupSubsystem();
   void InitDefaultCommand();
 
-  void setPickup(bool pickup);
+  //------------------------------------------------
+  //Sets the corresponding state for the pickup
+  //system
+  //------------------------------------------------
+  void setState(ShootState state);
 };
 
 #endif

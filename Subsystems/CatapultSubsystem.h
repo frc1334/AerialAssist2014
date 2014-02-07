@@ -2,6 +2,7 @@
 #define CATAPULTSUBSYSTEM_H
 
 #include "Commands/Subsystem.h"
+#include "../ShootState.h"
 #include "WPILib.h"
 
 class CatapultSubsystem: public Subsystem
@@ -13,13 +14,22 @@ private:
   Solenoid* midlock;	//P2
   Solenoid* winchgear;
 public:
-  enum CatapultAngle { HighShot, LowShot, Pickup, Catch };
-
   CatapultSubsystem();
   void InitDefaultCommand();
 
-  void setAngle(CatapultAngle angle);
+  //------------------------------------------------
+  //Sets the solenoid positions to match
+  //a given setting as defined in ShootState
+  //------------------------------------------------
+  void setState(ShootState state);
+  //------------------------------------------------
+  //Sets the winch motor direction and speed 
+  //------------------------------------------------
   void setWinch(float speed);
+  //------------------------------------------------
+  //Sets the gear to either neutral (false) or
+  //engaged (true)
+  //------------------------------------------------
   void setWinchGear(bool gear);
 };
 
