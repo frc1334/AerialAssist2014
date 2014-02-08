@@ -1,4 +1,5 @@
 #include "DriveTrainSubsystem.h"
+#include "../Commands/XboxDriveCommand.h"
 #include "../Robotmap.h"
 
 DriveTrainSubsystem::DriveTrainSubsystem()
@@ -15,7 +16,7 @@ DriveTrainSubsystem::DriveTrainSubsystem()
 
 void DriveTrainSubsystem::InitDefaultCommand()
 {
-  //SetDefaultCommand(new MySpecialCommand());
+  SetDefaultCommand(new XboxDriveCommand());
 }
 
 void DriveTrainSubsystem::tankDrive(float left, float right)
@@ -32,10 +33,10 @@ void DriveTrainSubsystem::arcadeDrive(float drive, float turn)
 {
   left1->Set(-(drive - turn));
   left2->Set(-(drive - turn));
-  left3->Set(-(drive - turn));
+  //left3->Set(-(drive - turn));
   right1->Set(drive + turn);
   right2->Set(drive + turn);
-  right3->Set(drive + turn);
+  //right3->Set(drive + turn);
 }
 
 void DriveTrainSubsystem::shift(bool highGear)

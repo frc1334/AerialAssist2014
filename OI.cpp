@@ -2,5 +2,6 @@
 
 OI::OI()
 {
-  // Process operator interface input here.
+	joystickDrive = new Joystick(1);
+	joystickOperator = new Joystick(2);
 }
