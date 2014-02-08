@@ -18,6 +18,9 @@ public:
   DriveTrainSubsystem();
   void InitDefaultCommand();
 
+  //------------------------------------------------
+  //
+  //------------------------------------------------
   void tankDrive(float left, float right);
   void arcadeDrive(float drive, float turn);
   void shift(bool highGear);
