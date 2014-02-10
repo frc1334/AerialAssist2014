@@ -10,9 +10,20 @@ class CatapultSubsystem: public Subsystem
 private:
   Talon* winch1;
   Talon* winch2;
-  Solenoid* tilt;		//P1
-  Solenoid* midlock;	//P2
-  Solenoid* winchgear;
+  Talon* pickup;
+  Solenoid* launcherTilt;
+  Solenoid* launcherOpen;
+  Solenoid* rollerExtend;
+  Solenoid* winchGear;
+  Solenoid* launcherMidlock;
+  Solenoid* sideConstraints;
+
+  //P1-launcherTilt
+  //P2-launcherOpen
+  //P3-rollerExtend
+  //P4-winchGear
+  //P5-launcherMidLock
+  //P6-sideConstraints
 public:
   CatapultSubsystem();
   void InitDefaultCommand();
@@ -26,11 +37,6 @@ public:
   //Sets the winch motor direction and speed
   //------------------------------------------------
   void setWinch(float speed);
-  //------------------------------------------------
-  //Sets the gear to either neutral (false) or
-  //engaged (true)
-  //------------------------------------------------
-  void setWinchGear(bool gear);
 };
 
 #endif
