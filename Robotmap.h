@@ -17,14 +17,16 @@
 
 #define WINCH_TALON_1			7//
 #define WINCH_TALON_2			8//
-#define PICK_TALON				9//
+#define PICKUP_TALON			9//
 
 #define DRIVE_SOLENOID			1//
 
-#define TILT_SOLENOID			2//
-#define MIDLOCK_SOLENOID		3//
-#define WINCH_GEARBOX_SOLENOID	4//
-#define PICK_STATE_SOLENOID		5//
-
+#define LAUNCHER_TILT_SOLENOID	2//
+#define LAUNCHER_OPEN_SOLENOID	3//
+#define LAUNCHER_MIDLOCK_SOLENOID	4//
+#define WINCH_GEAR_SOLENOID		5//
+#define PICK_STATE_SOLENOID		6//
+#define ROLLER_EXTEND_SOLENOID	7//
+#define SIDE_CONTSRAINT_SOLENOID	8//
 
 #endif
