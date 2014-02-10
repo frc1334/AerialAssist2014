@@ -4,7 +4,6 @@
 #include "Subsystems/VisionSubsystem.h"
 #include "Subsystems/CatapultSubsystem.h"
 #include "Subsystems/DriveTrainSubsystem.h"
-#include "Subsystems/PickupSubsystem.h"
 #include "Commands/Command.h"
 #include "OI.h"
 
@@ -18,7 +17,6 @@ public:
   static VisionSubsystem* vision;
   static CatapultSubsystem* catapult;
   static DriveTrainSubsystem* drivetrain;
-  static PickupSubsystem* pickup;
   static OI* oi;
 };
 
