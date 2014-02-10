@@ -23,7 +23,7 @@ public:
   //------------------------------------------------
   void setState(ShootState state);
   //------------------------------------------------
-  //Sets the winch motor direction and speed 
+  //Sets the winch motor direction and speed
   //------------------------------------------------
   void setWinch(float speed);
   //------------------------------------------------
