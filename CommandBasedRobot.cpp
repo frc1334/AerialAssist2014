@@ -1,20 +1,24 @@
 #include "WPILib.h"
 #include "Commands/Command.h"
 #include "CommandBase.h"
+#include "Robotmap.h"
 
 class CommandBasedRobot : public IterativeRobot
 {
 private:
-  LiveWindow *lw;
+  LiveWindow* lw;
+  Compressor* compressor;
 
   virtual void RobotInit()
   {
     CommandBase::init();
     lw = LiveWindow::GetInstance();
+    compressor = new Compressor(COMPRESSOR_RELAY, COMPRESSOR_SWITCH);
   }
 
   virtual void AutonomousInit()
   {
+	  compressor->Start();
   }
 
   virtual void AutonomousPeriodic()
