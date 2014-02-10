@@ -23,16 +23,36 @@ void CatapultSubsystem::setState(ShootState state)
   switch (state)
   {
   case HighShot:
+	  launcherTilt->Set(false);
+	  launcherOpen->Set(false);
+	  rollerExtend->Set(false);
+	  winchGear->Set(false);
+	  launcherMidlock->Set(false);
+	  sideConstraints->Set(false);
     break;
-  case LowShot:
+  case LowShotPre:
+	  launcherTilt->Set(false);
     break;
+  case LowShotPost:
+	  launcherTilt->Set(true);
+	  launcherMidlock->Set(true);
+	  break;
   case Pickup1:
+	  launcherTilt->Set(true);
+	  rollerExtend->Set(true);
     break;
   case Pickup2Press:
+	  rollerExtend->Set(true);
+	  sideConstraints->Set(true);
     break;
   case Pickup2Release:
+	  rollerExtend->Set(false);
+	  sideConstraints->Set(false);
     break;
   case Catch:
+	  sideConstraints->Set(true);
+	  launcherOpen->Set(true);
+	  sideConstraints->Set(true);
     break;
   case Pass:
     break;
