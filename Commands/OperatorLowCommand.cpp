@@ -1,37 +1,38 @@
 #include "OperatorLowCommand.h"
+#include "OperatorLowPostCommand.h"
 
 OperatorLowCommand::OperatorLowCommand()
 {
-  // Use requires() here to declare subsystem dependencies
-  // eg. requires(chassis);
+  Requires(catapult);
 }
 
-// Called just before this Command runs the first time
 void OperatorLowCommand::Initialize()
 {
-
+  timer->Reset();
 }
 
-// Called repeatedly when this Command is scheduled to run
 void OperatorLowCommand::Execute()
 {
-
+  if (timer->Get() == 0)
+  {
+    catapult->setState(ShootState::LowShotPre);
+    timer.Start();
+  }
 }
 
-// Make this return true when this Command no longer needs to run execute()
 bool OperatorLowCommand::IsFinished()
 {
-  return false;
+  return timer->HasPeriodPassed(30.0f); // exit after solenoids have moved to position
+  // starts the next command
 }
 
-// Called once after isFinished returns true
 void OperatorLowCommand::End()
 {
-
+  Scheduler::GetInstance()->AddCommand(new OperatorLowPostCommand());
 }
 
-// Called when another command which requires one or more of the same
-// subsystems is scheduled to run
 void OperatorLowCommand::Interrupted()
 {
+  timer->Stop();
+  timer->Reset();
 }

@@ -10,6 +10,8 @@
  */
 class OperatorLowCommand: public CommandBase
 {
+private:
+  Timer* timer;
 public:
   OperatorLowCommand();
   virtual void Initialize();
