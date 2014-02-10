@@ -17,7 +17,7 @@
 
 #define WINCH_TALON_1			7//
 #define WINCH_TALON_2			8//
-#define PICK_TALON				9//
+#define PICKUP_TALON			9//
 
 #define DRIVE_SOLENOID			1//
 
