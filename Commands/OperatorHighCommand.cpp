@@ -12,7 +12,7 @@ void OperatorHighCommand::Initialize()
 
 void OperatorHighCommand::Execute()
 {
-  catapult->setState(ShootState::HighShot);
+  catapult->setState(HighShot);
 }
 
 bool OperatorHighCommand::IsFinished()

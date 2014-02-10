@@ -11,7 +11,7 @@ void OperatorPickup2Command::Initialize()
 
 void OperatorPickup2Command::Execute()
 {
-  catapult->setState(ShootState::Pickup2Press);
+  catapult->setState(Pickup2Press);
 }
 
 bool OperatorPickup2Command::IsFinished()
@@ -25,5 +25,5 @@ void OperatorPickup2Command::End()
 
 void OperatorPickup2Command::Interrupted()
 {
-  catapult->setState(ShootState::Pickup2Release);
+  catapult->setState(Pickup2Release);
 }

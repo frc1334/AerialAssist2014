@@ -15,8 +15,8 @@ void OperatorLowCommand::Execute()
 {
   if (timer->Get() == 0)
   {
-    catapult->setState(ShootState::LowShotPre);
-    timer.Start();
+    catapult->setState(LowShotPre);
+    timer->Start();
   }
 }
 

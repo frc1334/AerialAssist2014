@@ -11,7 +11,7 @@ void OperatorPickup1Command::Initialize()
 
 void OperatorPickup1Command::Execute()
 {
-  catapult->setState(ShootState::Pickup1);
+  catapult->setState(Pickup1);
 }
 
 bool OperatorPickup1Command::IsFinished()

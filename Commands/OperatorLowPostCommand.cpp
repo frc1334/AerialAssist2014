@@ -11,7 +11,7 @@ void OperatorLowPostCommand::Initialize()
 
 void OperatorLowPostCommand::Execute()
 {
-  catapult->setState(ShootState::LowShotPost);
+  catapult->setState(LowShotPost);
 }
 
 bool OperatorLowPostCommand::IsFinished()
