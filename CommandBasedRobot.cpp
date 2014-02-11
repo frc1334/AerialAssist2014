@@ -18,7 +18,7 @@ private:
 
   virtual void AutonomousInit()
   {
-	  compressor->Start();
+    compressor->Start();
   }
 
   virtual void AutonomousPeriodic()

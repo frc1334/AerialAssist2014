@@ -23,36 +23,36 @@ void CatapultSubsystem::setState(ShootState state)
   switch (state)
   {
   case HighShot:
-	  launcherTilt->Set(false);
-	  launcherOpen->Set(false);
-	  rollerExtend->Set(false);
-	  winchGear->Set(false);
-	  launcherMidlock->Set(false);
-	  sideConstraints->Set(false);
+    launcherTilt->Set(false);
+    launcherOpen->Set(false);
+    rollerExtend->Set(false);
+    winchGear->Set(false);
+    launcherMidlock->Set(false);
+    sideConstraints->Set(false);
     break;
   case LowShotPre:
-	  launcherTilt->Set(false);
+    launcherTilt->Set(false);
     break;
   case LowShotPost:
-	  launcherTilt->Set(true);
-	  launcherMidlock->Set(true);
-	  break;
+    launcherTilt->Set(true);
+    launcherMidlock->Set(true);
+    break;
   case Pickup1:
-	  launcherTilt->Set(true);
-	  rollerExtend->Set(true);
+    launcherTilt->Set(true);
+    rollerExtend->Set(true);
     break;
   case Pickup2Press:
-	  rollerExtend->Set(true);
-	  sideConstraints->Set(true);
+    rollerExtend->Set(true);
+    sideConstraints->Set(true);
     break;
   case Pickup2Release:
-	  rollerExtend->Set(false);
-	  sideConstraints->Set(false);
+    rollerExtend->Set(false);
+    sideConstraints->Set(false);
     break;
   case Catch:
-	  sideConstraints->Set(true);
-	  launcherOpen->Set(true);
-	  sideConstraints->Set(true);
+    sideConstraints->Set(true);
+    launcherOpen->Set(true);
+    sideConstraints->Set(true);
     break;
   case Pass:
     break;
@@ -74,5 +74,5 @@ void CatapultSubsystem::setPickup(float speed)
 }
 bool CatapultSubsystem::getWinchLimitSwitch()
 {
-	return winchLimitSwitch->Get();
+  return winchLimitSwitch->Get();
 }

@@ -8,14 +8,15 @@
  *
  * @author p
  */
-class WinchRewindCommand: public CommandBase {
+class WinchRewindCommand: public CommandBase
+{
 public:
-	WinchRewindCommand();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+  WinchRewindCommand();
+  virtual void Initialize();
+  virtual void Execute();
+  virtual bool IsFinished();
+  virtual void End();
+  virtual void Interrupted();
 };
 
 #endif

@@ -10,12 +10,12 @@ void OperatorCatchCommand::Initialize()
 
 void OperatorCatchCommand::Execute()
 {
-	catapult->setState(Catch);
+  catapult->setState(Catch);
 }
 
 bool OperatorCatchCommand::IsFinished()
 {
-  return false; 
+  return false;
 }
 
 void OperatorCatchCommand::End()
@@ -24,5 +24,5 @@ void OperatorCatchCommand::End()
 
 void OperatorCatchCommand::Interrupted()
 {
-	catapult->setState(HighShot);
+  catapult->setState(HighShot);
 }

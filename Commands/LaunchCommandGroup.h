@@ -8,9 +8,10 @@
  *
  * @author p
  */
-class LaunchCommandGroup: public CommandGroup {
-public:	
-	LaunchCommandGroup();
+class LaunchCommandGroup: public CommandGroup
+{
+public:
+  LaunchCommandGroup();
 };
 
 #endif

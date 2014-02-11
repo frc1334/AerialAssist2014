@@ -8,14 +8,15 @@
  *
  * @author p
  */
-class DriveLaunchReleaseCommand: public CommandBase {
+class DriveLaunchReleaseCommand: public CommandBase
+{
 public:
-	DriveLaunchReleaseCommand();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+  DriveLaunchReleaseCommand();
+  virtual void Initialize();
+  virtual void Execute();
+  virtual bool IsFinished();
+  virtual void End();
+  virtual void Interrupted();
 };
 
 #endif

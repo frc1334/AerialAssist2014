@@ -1,36 +1,36 @@
 #include "DriveLaunchReleaseCommand.h"
 
-DriveLaunchReleaseCommand::DriveLaunchReleaseCommand() 
+DriveLaunchReleaseCommand::DriveLaunchReleaseCommand()
 {
-	Requires (catapult);
+  Requires (catapult);
 }
 
 // Called just before this Command runs the first time
-void DriveLaunchReleaseCommand::Initialize() 
+void DriveLaunchReleaseCommand::Initialize()
 {
-	
+
 }
 
 // Called repeatedly when this Command is scheduled to run
-void DriveLaunchReleaseCommand::Execute() 
+void DriveLaunchReleaseCommand::Execute()
 {
-	catapult->setState(Launch);
+  catapult->setState(Launch);
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool DriveLaunchReleaseCommand::IsFinished() 
+bool DriveLaunchReleaseCommand::IsFinished()
 {
-	return true;
+  return true;
 }
 
 // Called once after isFinished returns true
-void DriveLaunchReleaseCommand::End() 
+void DriveLaunchReleaseCommand::End()
 {
-	
+
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void DriveLaunchReleaseCommand::Interrupted() 
+void DriveLaunchReleaseCommand::Interrupted()
 {
 }
