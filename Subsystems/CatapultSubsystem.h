@@ -17,7 +17,8 @@ private:
   Solenoid* winchGear;
   Solenoid* launcherMidlock;
   Solenoid* sideConstraints;
-
+  DigitalInput* winchLimitSwitch;
+  
   //P1-launcherTilt
   //P2-launcherOpen
   //P3-rollerExtend
