@@ -1,4 +1,6 @@
 #include "WinchRewindCommand.h"
+/*Run the winch motor backward until the limit switch is pressed -> 
+is finished is set to whether the limit switch is pressed*/
 
 WinchRewindCommand::WinchRewindCommand()
 {
