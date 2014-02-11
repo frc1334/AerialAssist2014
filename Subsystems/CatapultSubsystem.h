@@ -37,6 +37,10 @@ public:
   //Sets the winch motor direction and speed
   //------------------------------------------------
   void setWinch(float speed);
+  //------------------------------------------------
+  //Sets the robot into pick up
+  //------------------------------------------------
+  void setPickup(float speed);
 };
 
 #endif

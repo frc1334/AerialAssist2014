@@ -65,4 +65,10 @@ void CatapultSubsystem::setWinch(float speed)
 {
   winch1->Set(speed);
   winch2->Set(speed);
+
+}
+void CatapultSubsystem::setPickup(float speed)
+{
+  pickup->Set(speed);
+
 }
