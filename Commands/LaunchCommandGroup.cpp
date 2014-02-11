@@ -1,4 +1,6 @@
 #include "LaunchCommandGroup.h"
+#include "DriveLaunchReleaseCommand.h"
+#include "WinchRewindCommand.h"
 
 LaunchCommandGroup::LaunchCommandGroup() {
         // Add Commands here:
@@ -17,4 +19,9 @@ LaunchCommandGroup::LaunchCommandGroup() {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
+
+        AddSequential(new DriveLaunchReleaseCommand());
+        AddSequential(new WaitCommand());
+        AddSequential(new WinchRewindCommand());
+        
 }
