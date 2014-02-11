@@ -1,12 +1,12 @@
-#ifndef CATCHCOMMAND_H
-#define CATCHCOMMAND_H
+#ifndef OperatorCatchCommand_H
+#define OperatorCatchCommand_H
 
 #include "../CommandBase.h"
 
-class CatchCommand: public CommandBase
+class OperatorCatchCommand: public CommandBase
 {
 public:
-  CatchCommand();
+  OperatorCatchCommand();
   virtual void Initialize();
   virtual void Execute();
   virtual bool IsFinished();
