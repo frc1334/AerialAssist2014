@@ -4,6 +4,8 @@
 #include "Commands/OperatorCatchCommand.h"
 #include "Commands/OperatorPickup1Command.h"
 #include "Commands/OperatorPickup2Command.h"
+#include "Commands/LaunchCommandGroup.h"
+#include "Commands/OperatorPassCommand.h"
 OI::OI()
 {
   joystickDrive = new Joystick(1);
