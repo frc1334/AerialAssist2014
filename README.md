@@ -12,19 +12,19 @@ Driving is done using two XBOX controllers.  Controller one is used for driving,
 
 ### Drive Remote #####
 
-**Triggers** - Throttle (right is forward)  
-**Left Stick** - Steering  
-**Bumpers** - Gear shift (right is high gear)
-**B** - Passing
-**A** - Launching
+**Triggers** - Throttle (right is forward)    
+**Left Stick** - Steering   
+**Bumpers** - Gear shift (right is high gear)   
+**B** - Passing   
+**A** - Launching 
 
 ### Operator Remote #####
 
-**A** - Pick up position 1
-**B** - Low position 
-**Y** - High position
-**X** - Pick up position 2
-**Right Trigger** - Catch 
+**A** - Pick up position 1  
+**X** - Pick up position 2  
+**B** - Low position   
+**Y** - High position   
+**Right Trigger** - Catch   
 
 
 [xbox]: xbox-controller.png  "XBOX Controller"
