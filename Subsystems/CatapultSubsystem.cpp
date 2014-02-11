@@ -72,3 +72,7 @@ void CatapultSubsystem::setPickup(float speed)
   pickup->Set(speed);
 
 }
+bool CatapultSubsystem::getWinchLimitSwitch()
+{
+	return winchLimitSwitch->Get();
+}

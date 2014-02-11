@@ -42,6 +42,10 @@ public:
   //Sets the robot into pick up
   //------------------------------------------------
   void setPickup(float speed);
+  //------------------------------------------------
+  //Tells you position of shooter
+  //------------------------------------------------
+  bool getWinchLimitSwitch();
 };
 
 #endif
