@@ -9,9 +9,17 @@ class OI
 private:
   Joystick* joystickDrive;
   Joystick* joystickOperator;
+  
+  JoystickButton* buttonAOperator;
+  JoystickButton* buttonBOperator;
+  JoystickButton* buttonXOperator;
+  JoystickButton* buttonYOperator;
+  JoystickButton* buttonRightBumperOperator;
+  JoystickButton* buttonADrive;
+  JoystickButton* buttonBDrive;
+  
 public:
   OI();
-
   inline float drive()
   {
     return -addDeadZone(joystickDrive->GetRawAxis(3), 0.15f);
