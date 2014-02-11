@@ -36,6 +36,30 @@ public:
   {
     return ((fabs(original) <= deadzone) ? 0 : original);
   }
+  inline bool launch()
+  {
+	  return joystickDrive->GetRawButton(42);
+  }
+  inline bool pass()
+  {
+	  return joystickDrive->GetRawButton(42);
+  }
+  inline bool setHighPosition()
+  {
+	  return joystickOperator->GetRawButton(42);
+  }
+  inline bool setLowPosition()
+  {
+	  return joystickOperator->GetRawButton(42);
+  }
+  inline bool pickup()
+  {
+	  return joystickOperator->GetRawButton(42);
+  }
+  inline bool pickup2()
+  {
+	  return joystickOperator->GetRawButton(42);
+  }
 };
 
 #endif
