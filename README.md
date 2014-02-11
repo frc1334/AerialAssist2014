@@ -18,5 +18,13 @@ Driving is done using two XBOX controllers.  Controller one is used for driving,
 **B** - Passing
 **A** - Launching
 
+### Operator Remote #####
+
+**A** - Pick up position 1
+**B** - Low position 
+**Y** - High position
+**X** - Pick up position 2
+**Right Trigger** - Catch 
+
 
 [xbox]: xbox-controller.png  "XBOX Controller"
