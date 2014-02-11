@@ -1,4 +1,4 @@
-#include "OperatorOperatorCatchCommand.h"
+#include "OperatorCatchCommand.h"
 
 OperatorCatchCommand::OperatorCatchCommand()
 {
@@ -10,7 +10,6 @@ void OperatorCatchCommand::Initialize()
 
 void OperatorCatchCommand::Execute()
 {
-	
 	catapult->setState(Catch);
 }
 

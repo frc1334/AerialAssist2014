@@ -1,6 +1,9 @@
 #include "LaunchCommandGroup.h"
+
 #include "DriveLaunchReleaseCommand.h"
 #include "WinchRewindCommand.h"
+
+#include "Commands/WaitCommand.h"
 
 LaunchCommandGroup::LaunchCommandGroup() {
         // Add Commands here:
@@ -21,7 +24,7 @@ LaunchCommandGroup::LaunchCommandGroup() {
         // arm.
 
         AddSequential(new DriveLaunchReleaseCommand());
-        AddSequential(new WaitCommand());
+        AddSequential(new WaitCommand(30.0f));
         AddSequential(new WinchRewindCommand());
         
 }
