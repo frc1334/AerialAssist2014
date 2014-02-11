@@ -1,5 +1,5 @@
-#ifndef OperatorCatchCommand_H
-#define OperatorCatchCommand_H
+#ifndef OPERATORCATCHCOMMAND_H
+#define OPERATORCATCHCOMMAND_H
 
 #include "../CommandBase.h"
 #include "../ShootState.h"
