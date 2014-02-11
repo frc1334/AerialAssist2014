@@ -2,6 +2,7 @@
 #define OperatorCatchCommand_H
 
 #include "../CommandBase.h"
+#include "../ShootState.h"
 
 class OperatorCatchCommand: public CommandBase
 {
