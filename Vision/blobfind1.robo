@@ -1,0 +1,34 @@
+<head><version>2.59.3</version></head>
+<Color_Threshold>
+  <comment>In the colour threshold, we put the minimum number for green to 249</comment>
+  <blue_end>255</blue_end>
+  <blue_start>0</blue_start>
+  <green_end>255</green_end>
+  <green_start>249</green_start>
+  <red_end>255</red_end>
+  <red_start>0</red_start>
+  <result_type>2</result_type>
+</Color_Threshold>
+<Blob_Size>
+  <comment>This filters the picture for blobs of a specific size</comment>
+  <limit>1024</limit>
+  <mask>FALSE</mask>
+  <max_area>0</max_area>
+  <min_area>94</min_area>
+  <threshold>5</threshold>
+  <treat_as_color_image>FALSE</treat_as_color_image>
+</Blob_Size>
+<Convex_Hull>
+  <comment>Gave the target colour and made them more whole</comment>
+</Convex_Hull>
+<Population_Threshold>
+  <comment>This made the blobs white and spread out</comment>
+  <intensity_threshold>140</intensity_threshold>
+  <window_size>7</window_size>
+</Population_Threshold>
+<Blob_Count>
+  <comment>Counts the number of blobs in specific areas</comment>
+</Blob_Count>
+<Blob_Label>
+  <comment>Gave colour to the different blobs</comment>
+</Blob_Label>
