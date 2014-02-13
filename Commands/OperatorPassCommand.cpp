@@ -12,8 +12,7 @@ void OperatorPassCommand::Initialize()
 void OperatorPassCommand::Execute()
 {
   catapult->setState(HighShot);
-  catapult->setState(Pi
-kup1);
+  catapult->setState(Pickup1);
   catapult->setPickup(-1.0);
 }
 
