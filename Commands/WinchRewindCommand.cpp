@@ -1,4 +1,6 @@
 #include "WinchRewindCommand.h"
+/*Run the winch motor backward until the limit switch is pressed -> 
+is finished is set to whether the limit switch is pressed*/
 
 WinchRewindCommand::WinchRewindCommand()
 {
@@ -15,19 +17,22 @@ void WinchRewindCommand::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void WinchRewindCommand::Execute()
 {
+  catapult->setWinch(-1);
 
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool WinchRewindCommand::IsFinished()
 {
-  return false;
+
+ return ( catapult->setWinch(getWinchLimitSwitch));
+
 }
 
 // Called once after isFinished returns true
 void WinchRewindCommand::End()
 {
-
+ catapult->setWinch(0);
 }
 
 // Called when another command which requires one or more of the same
