@@ -7,9 +7,13 @@
 class VisionSubsystem: public Subsystem
 {
 private:
+NetworkTable* table;
+
 public:
   VisionSubsystem();
   void InitDefaultCommand();
+
+  int getBlobCount();
 };
 
 #endif
