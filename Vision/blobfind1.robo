@@ -32,3 +32,61 @@
 <Blob_Label>
   <comment>Gave colour to the different blobs</comment>
 </Blob_Label>
+<Blob_Tracking>
+  <absent_after_frames>2</absent_after_frames>
+  <aspect_weight>1.0</aspect_weight>
+  <blob_image>Current</blob_image>
+  <color_weight>1.0</color_weight>
+  <display_as_annotation>FALSE</display_as_annotation>
+  <display_id>TRUE</display_id>
+  <display_trail>TRUE</display_trail>
+  <graphic_color_index>6</graphic_color_index>
+  <histogram_weight>1.0</histogram_weight>
+  <id_font_size_index>1</id_font_size_index>
+  <length_limit>150</length_limit>
+  <location_weight>1.0</location_weight>
+  <match_threshold>0.75</match_threshold>
+  <orientation_weight>1.0</orientation_weight>
+  <overlap_weight>1.0</overlap_weight>
+  <present_after_frames>2</present_after_frames>
+  <present_after_pixels>0</present_after_pixels>
+  <raw_image>Source</raw_image>
+  <remove_untracked_blobs>FALSE</remove_untracked_blobs>
+  <shape_weight>1.0</shape_weight>
+  <size_weight>1.0</size_weight>
+  <tracking_precision>1.0</tracking_precision>
+  <track_aspect>FALSE</track_aspect>
+  <track_color>FALSE</track_color>
+  <track_histogram>FALSE</track_histogram>
+  <track_location>FALSE</track_location>
+  <track_orientation>FALSE</track_orientation>
+  <track_overlap>TRUE</track_overlap>
+  <track_shape>FALSE</track_shape>
+  <track_size>FALSE</track_size>
+  <trail_length>5</trail_length>
+</Blob_Tracking>
+<NetworkTables>
+  <delay>100</delay>
+  <filter_type_index>0</filter_type_index>
+  <hostname>10.13.34.2</hostname>
+  <port>1735</port>
+  <prefix>/SmartDashboard/</prefix>
+  <variables_to_send>BLOB_COUNT
+BLOB_TRACKING
+BLOB_TRACKING_1
+BLOB_TRACKING_1_X
+BLOB_TRACKING_1_Y
+BLOB_TRACKING_2
+BLOB_TRACKING_2_X
+BLOB_TRACKING_2_Y
+BLOB_TRACKING_5
+BLOB_TRACKING_5_X
+BLOB_TRACKING_5_Y
+BLOB_TRACKING_6
+BLOB_TRACKING_6_X
+BLOB_TRACKING_6_Y
+BLOB_TRACKING_COUNT
+BLOB_TRACKING_IDS
+BLOB_TRACKING_LOST_IDS</variables_to_send>
+  <variable_type_index>0</variable_type_index>
+</NetworkTables>
