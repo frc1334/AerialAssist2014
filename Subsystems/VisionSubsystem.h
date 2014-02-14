@@ -7,7 +7,7 @@
 class VisionSubsystem: public Subsystem
 {
 private:
-NetworkTable* table;
+  NetworkTable* table;
 
 public:
   VisionSubsystem();

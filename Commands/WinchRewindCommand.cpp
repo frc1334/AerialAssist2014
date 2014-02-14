@@ -1,10 +1,10 @@
 #include "WinchRewindCommand.h"
-/*Run the winch motor backward until the limit switch is pressed -> 
+/*Run the winch motor backward until the limit switch is pressed ->
 is finished is set to whether the limit switch is pressed*/
 
 WinchRewindCommand::WinchRewindCommand()
 {
-	Requires(catapult);
+  Requires(catapult);
 }
 
 void WinchRewindCommand::Initialize()
@@ -24,7 +24,7 @@ bool WinchRewindCommand::IsFinished()
 
 void WinchRewindCommand::End()
 {
- catapult->setWinch(0);
+  catapult->setWinch(0);
 }
 
 void WinchRewindCommand::Interrupted()

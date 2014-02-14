@@ -11,23 +11,23 @@ AutonomousDriveCommand::AutonomousDriveCommand(float drive, float turn, double t
 
 void AutonomousDriveCommand::Initialize()
 {
-	timer->Stop();
-	timer->Reset();
+  timer->Stop();
+  timer->Reset();
 }
 
 void AutonomousDriveCommand::Execute()
 {
-	drivetrain->arcadeDrive(drive, turn);
+  drivetrain->arcadeDrive(drive, turn);
 }
 
 bool AutonomousDriveCommand::IsFinished()
 {
-	return timer->HasPeriodPassed(time);
+  return timer->HasPeriodPassed(time);
 }
 
 void AutonomousDriveCommand::End()
 {
-	drivetrain->arcadeDrive(0, 0);
+  drivetrain->arcadeDrive(0, 0);
 }
 
 void AutonomousDriveCommand::Interrupted()

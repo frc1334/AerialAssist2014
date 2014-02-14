@@ -6,16 +6,16 @@
 class AutonomousDriveCommand: public CommandBase
 {
 private:
-	Timer* timer;
-	float drive, turn;
-	double time;
+  Timer* timer;
+  float drive, turn;
+  double time;
 public:
-	AutonomousDriveCommand(float drive, float turn, double time);
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+  AutonomousDriveCommand(float drive, float turn, double time);
+  virtual void Initialize();
+  virtual void Execute();
+  virtual bool IsFinished();
+  virtual void End();
+  virtual void Interrupted();
 };
 
 #endif
