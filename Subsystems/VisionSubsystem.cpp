@@ -3,7 +3,7 @@
 
 VisionSubsystem::VisionSubsystem() : Subsystem("VisionSubsystem")
 {
-	table = NetworkTable.getTable("RoboRealm");
+	table = NetworkTable::GetTable("RoboRealm");
 }
 
 void VisionSubsystem::InitDefaultCommand()
@@ -12,5 +12,5 @@ void VisionSubsystem::InitDefaultCommand()
 
 int VisionSubsystem::getBlobCount()
 {
-	return table -> getNumber ("BLOB_COUNT");
+	return (int)table -> GetNumber ("BLOB_COUNT");
 }
