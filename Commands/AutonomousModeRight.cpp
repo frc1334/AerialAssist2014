@@ -2,5 +2,5 @@
 #include "AutonomousDriveCommand.h"
 AutonomousModeRight::AutonomousModeRight()
 {
-	AddSequential(new AutonomousDriveCommand(0.0, 1.0, 0.15));
+	AddSequential(new AutonomousDriveCommand(0.0f, 1.0f, 0.75));
 }
