@@ -9,7 +9,7 @@ AutonomousModeCenter::AutonomousModeCenter()
   AddSequential (new AutonomousDriveCommand(0.0,1.0,2.0));
   AddSequential (new AutonomousDriveCommand(2.0,0.0,2.0));
   AddSequential (new AutonomousDriveCommand(0.0,0.0,0.0));
-	// Add Commands here:
+  // Add Commands here:
   // e.g. AddSequential(new Command1());
   //      AddSequential(new Command2());
   // these will run in order.
