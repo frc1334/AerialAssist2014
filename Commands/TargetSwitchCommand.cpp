@@ -22,7 +22,7 @@ void TargetSwitchCommand::Execute()
 
 bool TargetSwitchCommand::IsFinished()
 {
-  return true;
+  return (target == Left ? left : right)->IsFinished();
 }
 
 void TargetSwitchCommand::End()
