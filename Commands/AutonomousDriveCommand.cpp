@@ -1,5 +1,7 @@
 #include "AutonomousDriveCommand.h"
-
+#include <iostream>
+#include <cstdio>
+using namespace std;
 AutonomousDriveCommand::AutonomousDriveCommand(float drive, float turn, double time)
 {
   Requires(drivetrain);
@@ -7,6 +9,7 @@ AutonomousDriveCommand::AutonomousDriveCommand(float drive, float turn, double t
   this->drive = drive;
   this->turn = turn;
   this->time = time;
+  printf("AutoDriveCommand called: Params are: %f %f %f ", drive, turn, time);
 }
 
 void AutonomousDriveCommand::Initialize()
@@ -32,4 +35,5 @@ void AutonomousDriveCommand::End()
 
 void AutonomousDriveCommand::Interrupted()
 {
+	printf("Autodrive command ended");
 }
