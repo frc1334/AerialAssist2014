@@ -1,0 +1,34 @@
+#include "TargetSwitchCommand.h"
+
+TargetSwitchCommand::TargetSwitchCommand(Command* left, Command* right)
+{
+  Requires(vision);
+  this->left = left;
+  this->right = right;
+}
+
+void TargetSwitchCommand::Initialize()
+{
+}
+
+void TargetSwitchCommand::Execute()
+{
+  AutonomousTarget target = vision->guess();
+  if (target == Left)
+    left->Start();
+  else
+	right->Start();
+}
+
+bool TargetSwitchCommand::IsFinished()
+{
+  return true;
+}
+
+void TargetSwitchCommand::End()
+{
+}
+
+void TargetSwitchCommand::Interrupted()
+{
+}
