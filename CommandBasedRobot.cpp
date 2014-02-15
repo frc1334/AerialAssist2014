@@ -1,36 +1,33 @@
 #include "WPILib.h"
-#include "Commands/Command.h"
 #include "CommandBase.h"
-#include "Robotmap.h"
+#include "Commands/Command.h"
 #include "Commands/AutonomousModeLeft.h"
 #include "Commands/AutonomousModeCenter.h"
 #include "Commands/AutonomousModeRight.h"
+#include "Robotmap.h"
 
 class CommandBasedRobot : public IterativeRobot
 {
 private:
   LiveWindow* lw;
   Compressor* compressor;
-  AutonomousModeLeft* left;
-  AutonomousModeCenter* center;
-  AutonomousModeRight* right;
+  SendableChooser* choice;
 
   virtual void RobotInit()
   {
     CommandBase::init();
     lw = LiveWindow::GetInstance();
     compressor = new Compressor(COMPRESSOR_RELAY, COMPRESSOR_SWITCH);
-    left = new AutonomousModeLeft();
-    center = new AutonomousModeCenter();
-    right = new AutonomousModeRight();
+    choice = new SendableChoose();
+    choice->AddDefault("Center Mode", new AutonomousModeCenter());
+    choice->AddObject("Left Mode", new AutonomousModeLeft());
+    choice->AddObject("Right Mode", new AutonomousModeRight());
   }
 
   virtual void AutonomousInit()
   {
     compressor->Start();
-    left->Start();
-    //center->Start();
-    //right->Start();
+    ((Command*)choice->GetSelected())->Start();
   }
 
   virtual void AutonomousPeriodic()
@@ -40,9 +37,7 @@ private:
 
   virtual void TeleopInit()
   {
-    left->Cancel();
-    center->Cancel();
-    right->Cancel();
+	((Command*)choice->GetSelected())->Cancel();
   }
 
   virtual void TeleopPeriodic()
