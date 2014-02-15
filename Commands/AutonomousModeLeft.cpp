@@ -19,9 +19,13 @@ AutonomousModeLeft::AutonomousModeLeft()
   // e.g. if Command1 requires chassis, and Command2 requires arm,
   // a CommandGroup containing them would require both the chassis and the
   // arm.
-//Note for AutonomousDriveCommand First float is equal to motor, second is equal to forward, third 
+//Note for AutonomousDriveCommand First float is equal to motor, second is equal to forward, third
 //is equal to time
   AddSequential (new AutonomousDriveCommand(1.0,0.0,1.0));
+  AddSequential (new AutonomousDriveCommand(1.0,1.0,0.5));
+  AddSequential (new AutonomousDriveCommand(1.0,-1.0,0.5));
+
+
 
 
 
