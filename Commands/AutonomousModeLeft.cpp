@@ -20,7 +20,7 @@ AutonomousModeLeft::AutonomousModeLeft()
   // a CommandGroup containing them would require both the chassis and the
   // arm.
 //Note for AutonomousDriveCommand First float is equal to motor, second is equal to forward, third 
-+is equal to time
+//is equal to time
   AddSequential (new AutonomousDriveCommand(1.0,0.0,1.0));
 
 
