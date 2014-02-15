@@ -22,6 +22,7 @@ private:
     choice->AddDefault("Center Mode", new AutonomousModeCenter());
     choice->AddObject("Left Mode", new AutonomousModeLeft());
     choice->AddObject("Right Mode", new AutonomousModeRight());
+    SmartDashboard::PutData("Autonomous Mode", choice);
   }
 
   virtual void AutonomousInit()
