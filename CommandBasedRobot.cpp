@@ -18,7 +18,7 @@ private:
     CommandBase::init();
     lw = LiveWindow::GetInstance();
     compressor = new Compressor(COMPRESSOR_RELAY, COMPRESSOR_SWITCH);
-    choice = new SendableChoose();
+    choice = new SendableChooser();
     choice->AddDefault("Center Mode", new AutonomousModeCenter());
     choice->AddObject("Left Mode", new AutonomousModeLeft());
     choice->AddObject("Right Mode", new AutonomousModeRight());
