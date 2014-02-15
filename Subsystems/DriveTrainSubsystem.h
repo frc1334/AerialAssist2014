@@ -17,7 +17,7 @@ public:
   void InitDefaultCommand();
 
   //------------------------------------------------
-  //
+  //Drives the robot tank style
   //------------------------------------------------
   void tankDrive(float left, float right);
   void arcadeDrive(float drive, float turn);

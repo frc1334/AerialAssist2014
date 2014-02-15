@@ -22,7 +22,7 @@ public:
   OI();
   inline float drive()
   {
-    return addDeadZone(joystickDrive->GetRawAxis(3), 0.15f);
+    return -addDeadZone(joystickDrive->GetRawAxis(3), 0.15f);
   }
 
   inline float turn()
