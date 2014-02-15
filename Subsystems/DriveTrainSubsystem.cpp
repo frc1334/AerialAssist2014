@@ -27,8 +27,8 @@ void DriveTrainSubsystem::tankDrive(float left, float right)
 
 void DriveTrainSubsystem::arcadeDrive(float drive, float turn)
 {
-  left1->Set(drive + turn);
-  left2->Set(drive + turn);
+  left1->Set(-(drive + turn)); //TODO:remove negative for actual bot
+  left2->Set(-(drive + turn)); //TODO:same here
   right1->Set(-drive - turn);
   right2->Set(-drive - turn);
 }
