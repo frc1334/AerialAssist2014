@@ -13,7 +13,7 @@ void TargetSwitchCommand::Initialize()
 
 void TargetSwitchCommand::Execute()
 {
-  AutonomousTarget target = vision->guess();
+  target = vision->guess();
   if (target == Left)
     left->Start();
   else

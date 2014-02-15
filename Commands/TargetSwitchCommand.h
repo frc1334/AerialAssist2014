@@ -8,6 +8,7 @@ class TargetSwitchCommand: public CommandBase
 {
 private:
 	Command *left, *right;
+	AutonomousTarget target;
 public:
 	TargetSwitchCommand(Command* left, Command* right);
 	virtual void Initialize();
