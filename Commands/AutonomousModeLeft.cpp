@@ -2,7 +2,7 @@
 #include "AutonomousDriveCommand.h"
 #include "VisionDataCollectCommand.h"
 #include "TargetSwitchCommand.h"
-#include "LaunchCommandGroup.h
+#include "LaunchCommandGroup.h"
 
 AutonomousModeLeft::AutonomousModeLeft()
 {
