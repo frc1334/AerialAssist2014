@@ -3,6 +3,7 @@
 #include "VisionDataCollectCommand.h"
 #include "TargetSwitchCommand.h"
 #include "LaunchCommandGroup.h"
+#include "../AutonomousTarget.h"
 
 AutonomousModeLeft::AutonomousModeLeft()
 {
@@ -23,10 +24,10 @@ AutonomousModeLeft::AutonomousModeLeft()
 //Note for AutonomousDriveCommand First float is equal to motor, second is equal to forward, third
 //is equal to time
   AddSequential (new AutonomousDriveCommand(1.0,0.0,1.0));
-  //AddParallel   (new VisionDataCollectCommand(vision->collectData(target));
-  AddParallel   (new AutonomousDriveCommand(0.0,0.3,0.5));
-  AddParallel   (new AutonomousDriveCommand(0.0,-0.3,0.5));
-  //AddParallel   (new VisionDataCollectCommand(vision->collectData(target));
+  AddSequential (new AutonomousDriveCommand(0.0,0.3,0.5));
+  AddSequential (new VisionDataCollectCommand(Right));
+  AddSequential (new AutonomousDriveCommand(0.0,-0.3,0.5));
+  AddSequential (new VisionDataCollectCommand(Left));
   
 
 }
