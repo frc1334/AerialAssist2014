@@ -16,6 +16,8 @@ void VisionDataCollectCommand::Initialize()
 void VisionDataCollectCommand::Execute()
 {
   vision->collectData(target);
+  if (timer->Get() == 0)
+      timer->Start();
 }
 
 bool VisionDataCollectCommand::IsFinished()
