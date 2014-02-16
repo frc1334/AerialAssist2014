@@ -1,5 +1,9 @@
 #include "AutonomousModeCenter.h"
 #include "AutonomousDriveCommand.h"
+#include "VisionDataCollectCommand.h"
+#include "TargetSwitchCommand.h"
+#include "LaunchCommandGroup.h"
+
 
 AutonomousModeCenter::AutonomousModeCenter()
 {
