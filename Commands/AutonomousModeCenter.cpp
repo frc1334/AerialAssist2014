@@ -3,6 +3,7 @@
 #include "VisionDataCollectCommand.h"
 #include "TargetSwitchCommand.h"
 #include "LaunchCommandGroup.h"
+#include "../AutonomousTarget.h"
 
 
 AutonomousModeCenter::AutonomousModeCenter()
