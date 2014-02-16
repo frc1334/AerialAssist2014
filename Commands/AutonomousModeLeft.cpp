@@ -1,5 +1,8 @@
 #include "AutonomousModeLeft.h"
 #include "AutonomousDriveCommand.h"
+#include "VisionDataCollectCommand.h"
+#include "TargetSwitchCommand.h"
+#include "LaunchCommandGroup.h
 
 AutonomousModeLeft::AutonomousModeLeft()
 {
@@ -22,8 +25,11 @@ AutonomousModeLeft::AutonomousModeLeft()
 //Note for AutonomousDriveCommand First float is equal to motor, second is equal to forward, third
 //is equal to time
   AddSequential (new AutonomousDriveCommand(1.0,0.0,1.0));
-  AddSequential (new AutonomousDriveCommand(1.0,1.0,0.5));
-  AddSequential (new AutonomousDriveCommand(1.0,-1.0,0.5));
+  AddParallel   (new VisionDataCollectCommand(vision->collectData(target));
+  AddParallel   (new AutonomousDriveCommand(1.0,1.0,0.5));
+  AddParallel   (new AutonomousDriveCommand(1.0,-1.0,0.5));
+  AddParallel   (new VisionDataCollectCommand(vision->collectData(target));
+  
 
 
 
