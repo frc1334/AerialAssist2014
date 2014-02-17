@@ -23,10 +23,10 @@ AutonomousModeCenter::AutonomousModeCenter()
 // a CommandGroup containing them would require both the chassis and the
 // arm.
 // shoot
-  AddSequential (new AutonomousDriveCommand(0.0,1.0,2.0));
-  AddSequential (new AutonomousDriveCommand(0.0,-2.0,2.0));
-  AddSequential (new AutonomousDriveCommand(0.0,1.0,2.0));
-  AddSequential (new AutonomousDriveCommand(2.0,0.0,2.0));
-  AddSequential (new AutonomousDriveCommand(0.0,0.0,0.0));
-
+  AddSequential (new AutonomousDriveCommand(1.0,0.0,0.8));
+  AddSequential (new AutonomousDriveCommand(0.0,0.3,0.5));
+  AddSequential (new VisionDataCollectCommand(Right));
+  AddSequential (new AutonomousDriveCommand(0.0,-0.3,1.0));
+  AddSequential (new VisionDataCollectCommand(Left));
+  AddSequential (new AutonomousDriveCommand(0.0,0.3,0.5));
 }
