@@ -4,6 +4,10 @@
 #include "Commands/Subsystem.h"
 #include "WPILib.h"
 
+/**
+  Manages interactions with the components of the drivetrain
+  Includes management of motors and gearshift
+*/
 class DriveTrainSubsystem: public Subsystem
 {
 private:
@@ -16,11 +20,17 @@ public:
   DriveTrainSubsystem();
   void InitDefaultCommand();
 
-  //------------------------------------------------
-  //Drives the robot tank style
-  //------------------------------------------------
+  /**
+    Drives the robot tank style
+  */
   void tankDrive(float left, float right);
+  /**
+    Drives the robot arcade style
+  */
   void arcadeDrive(float drive, float turn);
+  /**
+    Changes the state of the gearshift
+  */
   void shift(bool highGear);
 };
 
