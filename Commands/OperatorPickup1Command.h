@@ -4,10 +4,10 @@
 #include "../CommandBase.h"
 
 /**
- *
- *
- * @author p
- */
+***************************************************************************
+Sets state to pick up position1 and only runs it one.
+***************************************************************************
+*/
 class OperatorPickup1Command: public CommandBase
 {
 public:
