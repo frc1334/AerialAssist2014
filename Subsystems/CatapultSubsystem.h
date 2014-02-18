@@ -5,6 +5,10 @@
 #include "../ShootState.h"
 #include "WPILib.h"
 
+/**
+Manages interactions with the catapult and pickup
+mechanism
+*/
 class CatapultSubsystem: public Subsystem
 {
 private:
@@ -29,22 +33,22 @@ public:
   CatapultSubsystem();
   void InitDefaultCommand();
 
-  //------------------------------------------------
-  //Sets the solenoid positions to match
-  //a given setting as defined in ShootState
-  //------------------------------------------------
+  /**
+    Sets the solenoid positions to match
+    a given setting as defined in ShootState
+  */
   void setState(ShootState state);
-  //------------------------------------------------
-  //Sets the winch motor direction and speed
-  //------------------------------------------------
+  /**
+    Sets the winch motor direction and speed
+  */
   void setWinch(float speed);
-  //------------------------------------------------
-  //Sets the robot into pick up
-  //------------------------------------------------
+  /*
+    Sets the robot into pick up
+  */
   void setPickup(float speed);
-  //------------------------------------------------
-  //Tells you position of shooter
-  //------------------------------------------------
+  /*
+    Tells you position of shooter
+  */
   bool getWinchLimitSwitch();
 };
 
