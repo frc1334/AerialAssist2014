@@ -2,6 +2,7 @@
 
 OperatorCatchCommand::OperatorCatchCommand()
 {
+  Requires(catapult);
 }
 
 void OperatorCatchCommand::Initialize()
