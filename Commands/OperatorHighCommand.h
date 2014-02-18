@@ -3,11 +3,9 @@
 
 #include "../CommandBase.h"
 
-/**
- *
- *
- * @author p
- */
+************************************************
+Sets the Robot into the "High" position.
+************************************************
 class OperatorHighCommand: public CommandBase
 {
 public:
