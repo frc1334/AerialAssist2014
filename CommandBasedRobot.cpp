@@ -6,6 +6,9 @@
 #include "Commands/AutonomousModeRight.h"
 #include "Robotmap.h"
 
+/**
+  Main robot class
+*/
 class CommandBasedRobot : public IterativeRobot
 {
 private:
@@ -13,6 +16,7 @@ private:
   Compressor* compressor;
   SendableChooser* choice;
 
+  /** Runs when the robot starts up */
   virtual void RobotInit()
   {
     CommandBase::init();
@@ -25,22 +29,26 @@ private:
     SmartDashboard::PutData("Autonomous Mode", choice);
   }
 
+  /** Initializes an autonomous session */
   virtual void AutonomousInit()
   {
     compressor->Start();
     ((Command*)choice->GetSelected())->Start();
   }
 
+  /** Runs continously during autonomous */
   virtual void AutonomousPeriodic()
   {
     Scheduler::GetInstance()->Run();
   }
 
+  /** Initializes a teleop session */
   virtual void TeleopInit()
   {
     ((Command*)choice->GetSelected())->Cancel();
   }
 
+  /** Runs continously during teleop */
   virtual void TeleopPeriodic()
   {
     Scheduler::GetInstance()->Run();

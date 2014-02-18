@@ -7,11 +7,16 @@
 #include "Commands/Command.h"
 #include "OI.h"
 
+/**
+  Provides the base interface for all commands
+  All instances of the subsystems exist here
+*/
 class CommandBase: public Command
 {
 public:
   CommandBase(const char* name);
   CommandBase();
+  /** Inits the subsystems */
   static void init();
 
   static VisionSubsystem* vision;
