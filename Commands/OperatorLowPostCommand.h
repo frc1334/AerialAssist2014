@@ -3,11 +3,11 @@
 
 #include "../CommandBase.h"
 
-/**
- *
- *
- * @author p
- */
+***********************************************************
+This program puts the robot in the "low" position.
+***********************************************************
+
+
 class OperatorLowPostCommand: public CommandBase
 {
 public:
