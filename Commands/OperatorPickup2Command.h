@@ -2,6 +2,10 @@
 #define OPERATORPICKUP2COMMAND_H
 
 #include "../CommandBase.h"
+**************************************************
+This command enables the robot to pick up objects.
+Uses commandbase. 
+**************************************************
 
 /**
  *
