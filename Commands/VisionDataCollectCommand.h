@@ -4,7 +4,7 @@
 #include "../CommandBase.h"
 #include "../AutonomousTarget.h"
 
-/*
+/**
 **************************************************************************************
  The Vision collect subsystem features a few critical function for "discovering" the
 hot goal. The "magic" happens in the "Execute" feild. In this feild the camera starts

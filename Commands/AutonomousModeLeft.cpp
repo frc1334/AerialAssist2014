@@ -23,11 +23,11 @@ AutonomousModeLeft::AutonomousModeLeft()
 // arm.
 //Note for AutonomousDriveCommand First float is equal to motor, second is equal to forward, third
 //is equal to time
-  AddSequential (new AutonomousDriveCommand(1.0,0.0,0.8));
   AddSequential (new VisionDataCollectCommand(Left));
   AddSequential (new AutonomousDriveCommand(0.0,0.3,0.5));
   AddSequential (new VisionDataCollectCommand(Right));
   AddSequential (new AutonomousDriveCommand(0.0,-0.3,0.5));
+  AddSequential (new AutonomousDriveCommand(1.0,0.0,0.8));
   
   
 
