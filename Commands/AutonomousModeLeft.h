@@ -3,7 +3,10 @@
 
 /**
 **********************************************************************************************
-This command runs the routine for the left mode of the autonomous mode.
+This command runs the routine for the left mode of the autonomous mode. This will instantly
+tell the Robot that it's looking at the left target. Then points the robot to the right target.
+Once, it tells the robot it's looking at the right target it moves into the point-zone.
+TBD May or may not shoot.
 **********************************************************************************************
 */
 

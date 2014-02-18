@@ -4,7 +4,9 @@
 #include "Commands/CommandGroup.h"
 /**
 **********************************************************************************************
-This command runs the routine for the left mode of the autonomous mode.
+This command is when the robot (in autonomous) is setup on the right side of the field. It tells
+the robot to look at the right target, then the left target, then depending on which goal is hot,
+shoot it into that goal. Then drive forward into the goalie zone.
 **********************************************************************************************
 */
 
