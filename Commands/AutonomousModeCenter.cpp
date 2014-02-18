@@ -4,6 +4,7 @@
 #include "TargetSwitchCommand.h"
 #include "LaunchCommandGroup.h"
 #include "../AutonomousTarget.h"
+#include "WinchRewindCommand"
 
 
 AutonomousModeCenter::AutonomousModeCenter()
@@ -13,7 +14,8 @@ AutonomousModeCenter::AutonomousModeCenter()
 //      AddSequential(new Command2());
 // these will run in order.
 // To run multiple commands at the same time,
-// use AddParallel()
+/
+/ use AddParallel()
 // e.g. AddParallel(new Command1());
 //      AddSequential(new Command2());
 // Command1 and Command2 will run in parallel.
@@ -23,10 +25,13 @@ AutonomousModeCenter::AutonomousModeCenter()
 // a CommandGroup containing them would require both the chassis and the
 // arm.
 // shoot
-  AddSequential (new AutonomousDriveCommand(1.0,0.0,0.8));
+  AddSequential (new WinchRewindCommand());
   AddSequential (new AutonomousDriveCommand(0.0,0.3,0.5));
   AddSequential (new VisionDataCollectCommand(Right));
   AddSequential (new AutonomousDriveCommand(0.0,-0.3,1.0));
   AddSequential (new VisionDataCollectCommand(Left));
   AddSequential (new AutonomousDriveCommand(0.0,0.3,0.5));
+  AddSequential (new TargetSwitchCommand(new AutonomousDriveCommand(0.0,-0.3,0.5)/new AutonomousDriveCommand(0.0,0.3,0.5)));
+  AddSequential (new LaunchCommandGroup ());
+  AddSequential (new AutonomousDriveCommand(1.0,0.0,0.8));
 }
