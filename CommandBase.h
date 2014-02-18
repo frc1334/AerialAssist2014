@@ -19,9 +19,13 @@ public:
   /** Inits the subsystems */
   static void init();
 
+  /** Vision subsystem instance */
   static VisionSubsystem* vision;
+  /** Launcher subsystem instance */
   static CatapultSubsystem* catapult;
+  /** Drivetrain subsystem instance */
   static DriveTrainSubsystem* drivetrain;
+  /** Operator interface instance */
   static OI* oi;
 };
 
