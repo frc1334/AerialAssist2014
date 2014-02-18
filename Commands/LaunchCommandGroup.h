@@ -3,11 +3,10 @@
 
 #include "Commands/CommandGroup.h"
 
-/**
- *
- *
- * @author p
- */
+*********************************************************
+Runs all the necessary commands to launch the robot
+*********************************************************
+
 class LaunchCommandGroup: public CommandGroup
 {
 public:
