@@ -4,9 +4,9 @@
 #include "../CommandBase.h"
 
 /**
- *
- *
- * @author p
+***************************************************************************
+It requires the catapult subsystem. Then it releases the ball.       
+***************************************************************************
  */
 class DriveLaunchReleaseCommand: public CommandBase
 {
