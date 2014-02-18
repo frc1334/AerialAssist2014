@@ -4,6 +4,10 @@
 #include "WPILib.h"
 #include <math.h>
 
+/**
+  Operator interface
+  Handles all user input
+*/
 class OI
 {
 private:
@@ -20,53 +24,34 @@ private:
 
 public:
   OI();
+  /** Retrieves the fwd/rev value for the drive */
   inline float drive()
   {
     return -addDeadZone(joystickDrive->GetRawAxis(3), 0.15f);
   }
 
+  /** Retrieves the left/right value for the drive */
   inline float turn()
   {
     return addDeadZone(joystickDrive->GetRawAxis(1), 0.15f);
   }
 
+  /** Returns status of shift up button */
   inline bool shiftHigh()
   {
     return joystickDrive->GetRawButton(42);
   }
 
+  /** Returns status of shift down button */
   inline bool shiftLow()
   {
     return joystickDrive->GetRawButton(42);
   }
 
+  /** Factors a deadzone into a given value */
   inline float addDeadZone(float original, float deadzone)
   {
     return ((fabs(original) <= deadzone) ? 0 : original);
-  }
-  inline bool launch()
-  {
-    return joystickDrive->GetRawButton(42);
-  }
-  inline bool pass()
-  {
-    return joystickDrive->GetRawButton(42);
-  }
-  inline bool setHighPosition()
-  {
-    return joystickOperator->GetRawButton(42);
-  }
-  inline bool setLowPosition()
-  {
-    return joystickOperator->GetRawButton(42);
-  }
-  inline bool pickup()
-  {
-    return joystickOperator->GetRawButton(42);
-  }
-  inline bool pickup2()
-  {
-    return joystickOperator->GetRawButton(42);
   }
 };
 

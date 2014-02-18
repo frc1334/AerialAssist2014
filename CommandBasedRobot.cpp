@@ -61,4 +61,3 @@ private:
 };
 
 START_ROBOT_CLASS(CommandBasedRobot);
-
