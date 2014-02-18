@@ -4,6 +4,7 @@
 #include "TargetSwitchCommand.h"
 #include "LaunchCommandGroup.h"
 #include "../AutonomousTarget.h"
+#include "WinchRewindCommand.h"
 
 AutonomousModeLeft::AutonomousModeLeft()
 {
