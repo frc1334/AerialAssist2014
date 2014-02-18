@@ -18,7 +18,7 @@ void AutonomousDriveCommand::Initialize()
 void AutonomousDriveCommand::Execute()
 {
   if (timer->Get() == 0)
-	  timer->Start();
+    timer->Start();
   drivetrain->arcadeDrive(drive, turn);
 }
 

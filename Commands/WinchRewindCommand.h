@@ -4,12 +4,13 @@
 #include "../CommandBase.h"
 /**
 **********************************************************************
-It requires a catapult and will rewind the winch once the command is 
+It requires a catapult and will rewind the winch once the command is
 executed it will then wait till the winch reaches it's limit and set
 the power for rewinding the winch to 0.
 **********************************************************************
 */
-WinchRewindCommand: public CommandBase
+WinchRewindCommand:
+public CommandBase
 {
 public:
   WinchRewindCommand();

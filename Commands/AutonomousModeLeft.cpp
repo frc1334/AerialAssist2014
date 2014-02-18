@@ -29,7 +29,7 @@ AutonomousModeLeft::AutonomousModeLeft()
   AddSequential (new AutonomousDriveCommand(0.0,-0.3,0.5));
   AddSequential (new VisionDataCollectCommand(Right));
   AddSequential (new AutonomousDriveCommand(1.0,0.0,0.8));
-  
-  
+
+
 
 }

@@ -19,12 +19,12 @@ private:
   Timer* timer;
   AutonomousTarget target;
 public:
-	VisionDataCollectCommand(AutonomousTarget target);
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+  VisionDataCollectCommand(AutonomousTarget target);
+  virtual void Initialize();
+  virtual void Execute();
+  virtual bool IsFinished();
+  virtual void End();
+  virtual void Interrupted();
 };
 
 #endif

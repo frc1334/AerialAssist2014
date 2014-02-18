@@ -38,7 +38,7 @@ private:
 
   virtual void TeleopInit()
   {
-	((Command*)choice->GetSelected())->Cancel();
+    ((Command*)choice->GetSelected())->Cancel();
   }
 
   virtual void TeleopPeriodic()

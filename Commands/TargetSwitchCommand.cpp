@@ -17,7 +17,7 @@ void TargetSwitchCommand::Execute()
   if (target == Left)
     left->Start();
   else
-	right->Start();
+    right->Start();
 }
 
 bool TargetSwitchCommand::IsFinished()

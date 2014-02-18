@@ -26,9 +26,9 @@ AutonomousTarget VisionSubsystem::guess()
 {
   int sumLeft = 0, sumRight = 0;
   for (unsigned int i = 0; i < left->size(); i++)
-	  sumLeft += left->at(i);
+    sumLeft += left->at(i);
   for (unsigned int i = 0; i < right->size(); i++)
-	  sumRight += right->at(i);
+    sumRight += right->at(i);
   return ((sumLeft / left->size()) > (sumRight / right->size()) ? Left : Right); // calculate averages, return based on higher average
 }
 
