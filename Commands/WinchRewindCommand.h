@@ -2,13 +2,14 @@
 #define WINCHREWINDCOMMAND_H
 
 #include "../CommandBase.h"
-
 /**
- *
- *
- * @author p
- */
-class WinchRewindCommand: public CommandBase
+**********************************************************************
+It requires a catapult and will rewind the winch once the command is 
+executed it will then wait till the winch reaches it's limit and set
+the power for rewinding the winch to 0.
+**********************************************************************
+*/
+WinchRewindCommand: public CommandBase
 {
 public:
   WinchRewindCommand();
