@@ -18,6 +18,8 @@ private:
   Solenoid* shifter;
 public:
   DriveTrainSubsystem();
+
+  /** Initializes the default command */
   void InitDefaultCommand();
 
   /**

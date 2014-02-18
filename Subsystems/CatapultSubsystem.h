@@ -31,6 +31,8 @@ private:
   //P6-sideConstraints
 public:
   CatapultSubsystem();
+
+  /** Initializes the default command */
   void InitDefaultCommand();
 
   /**
@@ -42,11 +44,11 @@ public:
     Sets the winch motor direction and speed
   */
   void setWinch(float speed);
-  /*
+  /**
     Sets the robot into pick up
   */
   void setPickup(float speed);
-  /*
+  /**
     Tells you position of shooter
   */
   bool getWinchLimitSwitch();
