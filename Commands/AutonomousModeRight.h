@@ -2,12 +2,12 @@
 #define AUTONOMOUSMODERIGHT_H
 
 #include "Commands/CommandGroup.h"
-
 /**
- *
- *
- * @author p
- */
+**********************************************************************************************
+This command runs the routine for the left mode of the autonomous mode.
+**********************************************************************************************
+*/
+
 class AutonomousModeRight: public CommandGroup
 {
 public:
