@@ -11,7 +11,7 @@ void XboxDriveCommand::Initialize()
 
 void XboxDriveCommand::Execute()
 {
-  drivetrain->arcadeDrive(oi->drive(), oi->turn());
+  drivetrain->arcadeDrive(oi->drive(), oi->turn() * 0.9f);
   if (oi->shiftHigh())
     drivetrain->shift(true);
   if (oi->shiftLow())

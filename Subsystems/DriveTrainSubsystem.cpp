@@ -27,7 +27,7 @@ void DriveTrainSubsystem::tankDrive(float left, float right)
 
 void DriveTrainSubsystem::arcadeDrive(float drive, float turn)
 {
-  tankDrive(turn - drive, turn + drive);
+  tankDrive((-turn) - drive, (-turn) + drive);
 }
 
 void DriveTrainSubsystem::shift(bool highGear)

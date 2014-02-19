@@ -17,7 +17,7 @@
 #define WINCH_TALON_2			2//
 #define PICKUP_TALON			3//
 
-#define DRIVE_SOLENOID			1//
+#define DRIVE_SOLENOID			6
 
 #define LAUNCHER_TILT_SOLENOID	2//
 #define LAUNCHER_OPEN_SOLENOID	3//

@@ -39,13 +39,13 @@ public:
   /** Returns status of shift up button */
   inline bool shiftHigh()
   {
-    return joystickDrive->GetRawButton(42);
+    return joystickDrive->GetRawButton(6);
   }
 
   /** Returns status of shift down button */
   inline bool shiftLow()
   {
-    return joystickDrive->GetRawButton(42);
+    return joystickDrive->GetRawButton(5);
   }
 
   /** Factors a deadzone into a given value */
