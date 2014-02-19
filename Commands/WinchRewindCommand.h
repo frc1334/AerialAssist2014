@@ -9,8 +9,7 @@ executed it will then wait till the winch reaches it's limit and set
 the power for rewinding the winch to 0.
 **********************************************************************
 */
-WinchRewindCommand:
-public CommandBase
+class WinchRewindCommand: public CommandBase
 {
 public:
   WinchRewindCommand();

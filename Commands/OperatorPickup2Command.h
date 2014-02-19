@@ -2,16 +2,11 @@
 #define OPERATORPICKUP2COMMAND_H
 
 #include "../CommandBase.h"
-**************************************************
+/**************************************************
 This command enables the robot to pick up objects.
 Uses commandbase. 
-**************************************************
+**************************************************/
 
-/**
- *
- *
- * @author p
- */
 class OperatorPickup2Command: public CommandBase
 {
 public:
