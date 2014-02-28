@@ -12,6 +12,7 @@ CatapultSubsystem::CatapultSubsystem() : Subsystem("CatapultSubsystem")
   winchGear = new Solenoid(WINCH_GEAR_SOLENOID);
   launcherMidlock = new Solenoid(LAUNCHER_MIDLOCK_SOLENOID);
   sideConstraints = new Solenoid(SIDE_CONSTRAINT_SOLENOID);
+  winchLimitSwitch = new DigitalInput(WINCH_SWITCH);
 }
 
 void CatapultSubsystem::InitDefaultCommand()
@@ -74,5 +75,5 @@ void CatapultSubsystem::setPickup(float speed)
 }
 bool CatapultSubsystem::getWinchLimitSwitch()
 {
-  return winchLimitSwitch->Get();
+  return !winchLimitSwitch->Get();
 }

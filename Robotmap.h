@@ -8,14 +8,15 @@
  * floating around.
  */
 
-#define LEFT_TALON_1			4
-#define LEFT_TALON_2			5
-#define RIGHT_TALON_1			6
-#define RIGHT_TALON_2			7
+#define LEFT_TALON_1			1
+#define LEFT_TALON_2			2
+#define RIGHT_TALON_1			3
+#define RIGHT_TALON_2			4
 
-#define WINCH_TALON_1			1//
-#define WINCH_TALON_2			2//
-#define PICKUP_TALON			3//
+#define WINCH_SWITCH			1
+#define WINCH_TALON_1			6
+#define WINCH_TALON_2			7
+#define PICKUP_TALON			5
 
 #define DRIVE_SOLENOID			6
 

@@ -52,11 +52,13 @@ private:
   virtual void TeleopPeriodic()
   {
     Scheduler::GetInstance()->Run();
+	printf("Switch readout: %f", CommandBase::catapult->getWinchLimitSwitch() ? 1.0f : 0.0f);
   }
 
   virtual void TestPeriodic()
   {
-    lw->Run();
+	//printf("Switch readout: %f", CommandBase::catapult->getWinchLimitSwitch() ? 1.0f : 0.0f);
+    //lw->Run();
   }
 };
 
