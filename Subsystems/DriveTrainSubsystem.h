@@ -4,6 +4,8 @@
 #include "Commands/Subsystem.h"
 #include "WPILib.h"
 
+#include "../DoubleSolenoidProxy.h" //TODO:remove when we get singles
+
 /**
   Manages interactions with the components of the drivetrain
   Includes management of motors and gearshift
@@ -15,7 +17,7 @@ private:
   Talon* left2;
   Talon* right1;
   Talon* right2;
-  Solenoid* shifter;
+  DoubleSolenoidProxy* shifter;
 public:
   DriveTrainSubsystem();
 

@@ -6,12 +6,12 @@ CatapultSubsystem::CatapultSubsystem() : Subsystem("CatapultSubsystem")
   winch1 = new Talon(WINCH_TALON_1);
   winch2 = new Talon(WINCH_TALON_2);
   pickup = new Talon(PICKUP_TALON);
-  launcherTilt = new Solenoid(LAUNCHER_TILT_SOLENOID);
-  launcherOpen = new Solenoid(LAUNCHER_OPEN_SOLENOID);
-  rollerExtend = new Solenoid(ROLLER_EXTEND_SOLENOID);
-  winchGear = new Solenoid(WINCH_GEAR_SOLENOID);
-  launcherMidlock = new Solenoid(LAUNCHER_MIDLOCK_SOLENOID);
-  sideConstraints = new Solenoid(SIDE_CONSTRAINT_SOLENOID);
+  launcherTilt = new DoubleSolenoidProxy(LAUNCHER_TILT_SOLENOID);
+  launcherOpen = new DoubleSolenoidProxy(LAUNCHER_OPEN_SOLENOID);
+  rollerExtend = new DoubleSolenoidProxy(ROLLER_EXTEND_SOLENOID);
+  latch = new DoubleSolenoidProxy(LATCH_SOLENOID);
+  launcherMidlock = new DoubleSolenoidProxy(LAUNCHER_MIDLOCK_SOLENOID);
+  sideConstraints = new DoubleSolenoidProxy(SIDE_CONSTRAINT_SOLENOID);
   winchLimitSwitch = new DigitalInput(WINCH_SWITCH);
 }
 
@@ -27,7 +27,7 @@ void CatapultSubsystem::setState(ShootState state)
     launcherTilt->Set(false);
     launcherOpen->Set(false);
     rollerExtend->Set(false);
-    winchGear->Set(false);
+    unlock();
     launcherMidlock->Set(false);
     sideConstraints->Set(false);
     break;
@@ -58,6 +58,7 @@ void CatapultSubsystem::setState(ShootState state)
   case Pass:
     break;
   case Launch:
+	unlock();
     break;
   }
 }
@@ -76,4 +77,14 @@ void CatapultSubsystem::setPickup(float speed)
 bool CatapultSubsystem::getWinchLimitSwitch()
 {
   return !winchLimitSwitch->Get();
+}
+
+void CatapultSubsystem::lock()
+{
+  latch->Set(true);
+}
+
+void CatapultSubsystem::unlock()
+{
+  latch->Set(false);
 }

@@ -4,6 +4,7 @@
 #include "Commands/AutonomousModeLeft.h"
 #include "Commands/AutonomousModeCenter.h"
 #include "Commands/AutonomousModeRight.h"
+#include "Commands/WinchRewindCommand.h"
 #include "Robotmap.h"
 
 /**
@@ -45,14 +46,15 @@ private:
   /** Initializes a teleop session */
   virtual void TeleopInit()
   {
+	CommandBase::catapult->unlock();
     ((Command*)choice->GetSelected())->Cancel();
+    (new WinchRewindCommand())->Start();
   }
 
   /** Runs continously during teleop */
   virtual void TeleopPeriodic()
   {
     Scheduler::GetInstance()->Run();
-	printf("Switch readout: %f", CommandBase::catapult->getWinchLimitSwitch() ? 1.0f : 0.0f);
   }
 
   virtual void TestPeriodic()

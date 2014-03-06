@@ -9,7 +9,7 @@ DriveTrainSubsystem::DriveTrainSubsystem()
   left2 = new Talon(LEFT_TALON_2);
   right1 = new Talon(RIGHT_TALON_1);
   right2 = new Talon(RIGHT_TALON_2);
-  shifter = new Solenoid(DRIVE_SOLENOID);
+  shifter = new DoubleSolenoidProxy(DRIVE_SOLENOID);
 }
 
 void DriveTrainSubsystem::InitDefaultCommand()

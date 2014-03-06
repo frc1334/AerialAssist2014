@@ -25,6 +25,7 @@ bool WinchRewindCommand::IsFinished()
 void WinchRewindCommand::End()
 {
   catapult->setWinch(0);
+  catapult->lock();
 }
 
 void WinchRewindCommand::Interrupted()
