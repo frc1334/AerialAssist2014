@@ -1,5 +1,4 @@
 #include "OperatorLowCommand.h"
-#include "OperatorLowPostCommand.h"
 
 OperatorLowCommand::OperatorLowCommand()
 {
@@ -8,31 +7,22 @@ OperatorLowCommand::OperatorLowCommand()
 
 void OperatorLowCommand::Initialize()
 {
-  timer->Reset();
 }
 
 void OperatorLowCommand::Execute()
 {
-  if (timer->Get() == 0)
-  {
-    catapult->setState(LowShotPre);
-    timer->Start();
-  }
+  catapult->setState(Pickup2Press);
 }
 
 bool OperatorLowCommand::IsFinished()
 {
-  return timer->HasPeriodPassed(30.0f); // exit after solenoids have moved to position
-  // starts the next command
+  return true;
 }
 
 void OperatorLowCommand::End()
 {
-  Scheduler::GetInstance()->AddCommand(new OperatorLowPostCommand());
 }
 
 void OperatorLowCommand::Interrupted()
 {
-  timer->Stop();
-  timer->Reset();
 }

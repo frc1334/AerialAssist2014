@@ -12,6 +12,7 @@ void OperatorCatchCommand::Initialize()
 void OperatorCatchCommand::Execute()
 {
   catapult->setState(Catch);
+  catapult->setPickup(1.0f);
 }
 
 bool OperatorCatchCommand::IsFinished()
@@ -21,9 +22,12 @@ bool OperatorCatchCommand::IsFinished()
 
 void OperatorCatchCommand::End()
 {
+  catapult->setState(HighShot);
+  catapult->setPickup(0.0f);
 }
 
 void OperatorCatchCommand::Interrupted()
 {
   catapult->setState(HighShot);
+  catapult->setPickup(0.0f);
 }

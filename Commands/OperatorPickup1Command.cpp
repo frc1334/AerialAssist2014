@@ -11,12 +11,13 @@ void OperatorPickup1Command::Initialize()
 
 void OperatorPickup1Command::Execute()
 {
-  catapult->setState(Pickup1);
+  catapult->setPickup(-1.0f);
+  catapult->setState(Pickup2Press);
 }
 
 bool OperatorPickup1Command::IsFinished()
 {
-  return true; // run once
+  return false; // run once
 }
 
 void OperatorPickup1Command::End()

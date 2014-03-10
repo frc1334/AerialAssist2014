@@ -30,8 +30,12 @@ bool AutonomousDriveCommand::IsFinished()
 void AutonomousDriveCommand::End()
 {
   drivetrain->arcadeDrive(0, 0);
+  timer->Stop();
+  timer->Reset();
 }
 
 void AutonomousDriveCommand::Interrupted()
 {
+	  timer->Stop();
+	  timer->Reset();
 }

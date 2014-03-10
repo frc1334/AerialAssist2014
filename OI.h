@@ -19,8 +19,10 @@ private:
   JoystickButton* buttonXOperator;
   JoystickButton* buttonYOperator;
   JoystickButton* buttonRightBumperOperator;
+  JoystickButton* buttonLeftBumperOperator;
   JoystickButton* buttonADrive;
   JoystickButton* buttonBDrive;
+  JoystickButton* buttonXDrive;
 
 public:
   OI();

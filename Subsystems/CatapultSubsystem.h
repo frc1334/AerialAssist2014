@@ -20,11 +20,12 @@ private:
   Talon* pickup;
   DoubleSolenoidProxy* launcherTilt;
   DoubleSolenoidProxy* launcherOpen;
-  DoubleSolenoidProxy* rollerExtend;
+  Solenoid* rollerExtend;
   DoubleSolenoidProxy* latch;
   DoubleSolenoidProxy* launcherMidlock;
   DoubleSolenoidProxy* sideConstraints;
   DigitalInput* winchLimitSwitch;
+  DigitalInput* winchLatchSwitch;
 
   //P1-launcherTilt
   //P2-launcherOpen
@@ -33,6 +34,7 @@ private:
   //P5-launcherMidLock
   //P6-sideConstraints
 public:
+  Encoder* winchEncoder;
   CatapultSubsystem();
 
   /** Initializes the default command */
@@ -56,6 +58,10 @@ public:
   */
   bool getWinchLimitSwitch();
   /**
+    sdfsdfsdf
+  */
+  bool getWinchLatch();
+  /**
     Locks the shooter mech.
    */
   void lock();
@@ -63,6 +69,27 @@ public:
     Unlocks the shooter mech.
    */
   void unlock();
+  /**
+    Resets winch position encoder
+   */
+  void open();
+  /**
+    asdfasdf
+   */
+  void close();
+  /**
+    asdfasdf
+   */
+  void zeroWinch();
+  /**
+    Reads value from winch encoder
+   */
+  double readWinch();
+  /**
+    asdfasdf
+   */
+  bool isInLow();
+  inline bool safeReload();
 };
 
 #endif

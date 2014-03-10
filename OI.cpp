@@ -4,8 +4,11 @@
 #include "Commands/OperatorCatchCommand.h"
 #include "Commands/OperatorPickup1Command.h"
 #include "Commands/OperatorPickup2Command.h"
-#include "Commands/LaunchCommandGroup.h"
+#include "Commands/DriveLaunchReleaseCommand.h"
 #include "Commands/OperatorPassCommand.h"
+#include "Commands/LoadCatapultGroup.h"
+#include "Commands/MiddleCommandGroup.h"
+
 OI::OI()
 {
   joystickDrive = new Joystick(1);
@@ -14,15 +17,23 @@ OI::OI()
   buttonBOperator = new JoystickButton(joystickOperator, 2);
   buttonXOperator = new JoystickButton(joystickOperator, 3);
   buttonYOperator = new JoystickButton(joystickOperator, 4);
+  buttonLeftBumperOperator = new JoystickButton(joystickOperator, 5);
   buttonRightBumperOperator = new JoystickButton(joystickOperator, 6);
+  
   buttonADrive = new JoystickButton(joystickDrive, 1);
   buttonBDrive = new JoystickButton(joystickDrive, 2);
+  buttonXDrive = new JoystickButton(joystickDrive, 3);
 
-  buttonYOperator->WhenPressed(new OperatorHighCommand());
+  
+  
+  buttonXOperator->WhenPressed(new LoadCatapultGroup());
   buttonBOperator->WhenPressed(new OperatorLowCommand());
-  buttonRightBumperOperator->WhenPressed(new OperatorCatchCommand());
   buttonAOperator->WhenPressed(new OperatorPickup1Command());
-  buttonXOperator->WhenPressed(new OperatorPickup2Command());
-  buttonADrive->WhenPressed(new LaunchCommandGroup());
-  buttonBDrive->WhenPressed(new OperatorPassCommand());
+  buttonAOperator->WhenReleased(new OperatorPickup2Command());
+  buttonYOperator->WhenPressed(new OperatorHighCommand());
+  buttonRightBumperOperator->WhileHeld(new OperatorCatchCommand());
+  //buttonLeftBumperOperator->WhileHeld(new MiddleCommandGroup());
+  
+  buttonADrive->WhenPressed(new DriveLaunchReleaseCommand());
+  buttonBDrive->WhileHeld(new OperatorPassCommand());
 }

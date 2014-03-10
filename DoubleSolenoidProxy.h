@@ -19,6 +19,11 @@ public:
     doubleSolenoidAChannel->Set(on);
     doubleSolenoidBChannel->Set(!on);
   }
+  
+  bool Get()
+  {
+	return doubleSolenoidAChannel->Get();
+  }
 };
 
 #endif

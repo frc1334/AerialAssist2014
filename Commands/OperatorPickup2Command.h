@@ -9,6 +9,8 @@ Uses commandbase.
 
 class OperatorPickup2Command: public CommandBase
 {
+private:
+  Timer *timer;
 public:
   OperatorPickup2Command();
   virtual void Initialize();

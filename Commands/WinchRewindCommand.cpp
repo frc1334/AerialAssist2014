@@ -15,6 +15,8 @@ void WinchRewindCommand::Initialize()
 void WinchRewindCommand::Execute()
 {
   catapult->setWinch(-1.0);
+  catapult->close();
+  catapult->unlock();
 }
 
 bool WinchRewindCommand::IsFinished()
@@ -30,4 +32,10 @@ void WinchRewindCommand::End()
 
 void WinchRewindCommand::Interrupted()
 {
+}
+
+void WinchRewindCommand::Start()
+{
+  CommandBase::Start();
+  catapult->zeroWinch();
 }
