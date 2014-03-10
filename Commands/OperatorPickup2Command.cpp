@@ -1,4 +1,5 @@
 #include "OperatorPickup2Command.h"
+#include "../Timing.h"
 
 OperatorPickup2Command::OperatorPickup2Command()
 {
@@ -21,7 +22,7 @@ void OperatorPickup2Command::Execute()
 
 bool OperatorPickup2Command::IsFinished()
 {
-	  return timer->HasPeriodPassed(3.0f);
+	  return timer->HasPeriodPassed(PICKUP_WHEEL_OVERRUN);
 }
 
 void OperatorPickup2Command::End()
@@ -35,4 +36,5 @@ void OperatorPickup2Command::Interrupted()
 {
 	  timer->Stop();
 	  timer->Reset();
+	  catapult->setPickup(0.0f);
 }

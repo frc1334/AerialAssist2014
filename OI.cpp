@@ -8,6 +8,7 @@
 #include "Commands/OperatorPassCommand.h"
 #include "Commands/LoadCatapultGroup.h"
 #include "Commands/MiddleCommandGroup.h"
+#include "Commands/RollerOverrunCommand.h"
 
 OI::OI()
 {
@@ -32,6 +33,7 @@ OI::OI()
   buttonAOperator->WhenReleased(new OperatorPickup2Command());
   buttonYOperator->WhenPressed(new OperatorHighCommand());
   buttonRightBumperOperator->WhileHeld(new OperatorCatchCommand());
+  buttonRightBumperOperator->WhenReleased(new RollerOverrunCommand());
   //buttonLeftBumperOperator->WhileHeld(new MiddleCommandGroup());
   
   buttonADrive->WhenPressed(new DriveLaunchReleaseCommand());
