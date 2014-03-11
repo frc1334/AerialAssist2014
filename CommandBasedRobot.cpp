@@ -59,7 +59,7 @@ private:
   virtual void TeleopPeriodic()
   {
     Scheduler::GetInstance()->Run();
-    printf("L:%f S-R:%f W-L:%f\n", (double)CommandBase::catapult->isInLow(), (double)CommandBase::catapult->safeReload(), (double)CommandBase::catapult->getWinchLatch());
+    printf("L:%f S-R:%f W-L:%f E:%f\n", (double)CommandBase::catapult->isInLow(), (double)CommandBase::catapult->safeReload(), (double)CommandBase::catapult->getWinchLatch(), (double)CommandBase::catapult->winchEncoder->GetDistance());
   }
 
   virtual void TestPeriodic()
