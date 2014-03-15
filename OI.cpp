@@ -20,13 +20,13 @@ OI::OI()
   buttonYOperator = new JoystickButton(joystickOperator, 4);
   buttonLeftBumperOperator = new JoystickButton(joystickOperator, 5);
   buttonRightBumperOperator = new JoystickButton(joystickOperator, 6);
-  
+
   buttonADrive = new JoystickButton(joystickDrive, 1);
   buttonBDrive = new JoystickButton(joystickDrive, 2);
   buttonXDrive = new JoystickButton(joystickDrive, 3);
 
-  
-  
+
+
   buttonXOperator->WhenPressed(new LoadCatapultGroup());
   buttonBOperator->WhenPressed(new OperatorLowCommand());
   buttonAOperator->WhenPressed(new OperatorPickup1Command());
@@ -35,7 +35,7 @@ OI::OI()
   buttonRightBumperOperator->WhileHeld(new OperatorCatchCommand());
   buttonRightBumperOperator->WhenReleased(new RollerOverrunCommand());
   //buttonLeftBumperOperator->WhileHeld(new MiddleCommandGroup());
-  
+
   buttonADrive->WhenPressed(new DriveLaunchReleaseCommand());
   buttonBDrive->WhileHeld(new OperatorPassCommand());
 }

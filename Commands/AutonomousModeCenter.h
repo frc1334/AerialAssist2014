@@ -6,7 +6,7 @@
 /**
 ***************************************************************************
 In autonomous, if the robot is set up in the center of the field, the
-robot looks right, then it looks left, then it will shoot the ball to 
+robot looks right, then it looks left, then it will shoot the ball to
 whatever goal is hot, then move forward into the goalie zone
 ***************************************************************************
 */

@@ -39,6 +39,6 @@ void DriveLaunchReleaseCommand::End()
 // subsystems is scheduled to run
 void DriveLaunchReleaseCommand::Interrupted()
 {
-	  timer->Stop();
-	  timer->Reset();
+  timer->Stop();
+  timer->Reset();
 }

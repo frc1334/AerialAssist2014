@@ -4,7 +4,7 @@
 #include "../CommandBase.h"
 /**************************************************
 This command enables the robot to pick up objects.
-Uses commandbase. 
+Uses commandbase.
 **************************************************/
 
 class OperatorPickup2Command: public CommandBase

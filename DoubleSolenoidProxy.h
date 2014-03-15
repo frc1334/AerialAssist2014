@@ -13,16 +13,16 @@ public:
     doubleSolenoidBChannel = new Solenoid(2, symChannel);
     Set(false);
   }
-  
+
   void Set(bool on)
   {
     doubleSolenoidAChannel->Set(on);
     doubleSolenoidBChannel->Set(!on);
   }
-  
+
   bool Get()
   {
-	return doubleSolenoidAChannel->Get();
+    return doubleSolenoidAChannel->Get();
   }
 };
 

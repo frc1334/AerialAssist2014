@@ -5,7 +5,7 @@
 
 /**
 ***************************************************************************
-It requires the catapult subsystem. Then it releases the ball.       
+It requires the catapult subsystem. Then it releases the ball.
 ***************************************************************************
  */
 class DriveLaunchReleaseCommand: public CommandBase

@@ -36,6 +36,6 @@ void AutonomousDriveCommand::End()
 
 void AutonomousDriveCommand::Interrupted()
 {
-	  timer->Stop();
-	  timer->Reset();
+  timer->Stop();
+  timer->Reset();
 }

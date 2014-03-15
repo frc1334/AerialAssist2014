@@ -8,9 +8,10 @@
  *
  * @author p
  */
-class LoadCatapultGroup: public CommandGroup {
-public:	
-	LoadCatapultGroup();
+class LoadCatapultGroup: public CommandGroup
+{
+public:
+  LoadCatapultGroup();
 };
 
 #endif

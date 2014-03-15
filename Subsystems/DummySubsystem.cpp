@@ -1,13 +1,15 @@
 #include "DummySubsystem.h"
 #include "../Robotmap.h"
 
-DummySubsystem::DummySubsystem() : Subsystem("DummySubsystem") {
-	
+DummySubsystem::DummySubsystem() : Subsystem("DummySubsystem")
+{
+
 }
-    
-void DummySubsystem::InitDefaultCommand() {
-	// Set the default command for a subsystem here.
-	//SetDefaultCommand(new MySpecialCommand());
+
+void DummySubsystem::InitDefaultCommand()
+{
+  // Set the default command for a subsystem here.
+  //SetDefaultCommand(new MySpecialCommand());
 }
 
 

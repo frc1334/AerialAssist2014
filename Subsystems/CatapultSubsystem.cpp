@@ -33,8 +33,8 @@ void CatapultSubsystem::setState(ShootState state)
     sideConstraints->Set(false);
     break;
   case Middle:
-	launcherMidlock->Set(true);
-	break;
+    launcherMidlock->Set(true);
+    break;
   case Pickup2Press:
     rollerExtend->Set(false);
     break;
@@ -48,10 +48,10 @@ void CatapultSubsystem::setState(ShootState state)
   case Pass:
     break;
   case Launch:
-	if (safeReload())
-	{
-	  unlock();
-	}
+    if (safeReload())
+    {
+      unlock();
+    }
     break;
   }
 }
@@ -61,20 +61,20 @@ void CatapultSubsystem::setWinch(WinchDirection direction)
   switch (direction)
   {
   case Forward:
-	  winch1->Set(1.0f);
-	  winch2->Set(1.0f);
-	  break;
+    winch1->Set(1.0f);
+    winch2->Set(1.0f);
+    break;
   case Reverse:
-	  if (safeReload())
-	  {
-	    winch1->Set(-1.0f);
-	    winch2->Set(-1.0f);
-	  }
-	  break;
+    if (safeReload())
+    {
+      winch1->Set(-1.0f);
+      winch2->Set(-1.0f);
+    }
+    break;
   case Off:
-	  winch1->Set(0.0f);
-	  winch2->Set(0.0f);
-	  break;
+    winch1->Set(0.0f);
+    winch2->Set(0.0f);
+    break;
   }
 }
 

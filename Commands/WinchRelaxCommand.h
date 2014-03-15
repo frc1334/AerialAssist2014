@@ -8,14 +8,15 @@
  *
  * @author p
  */
-class WinchRelaxCommand: public CommandBase {
+class WinchRelaxCommand: public CommandBase
+{
 public:
-	WinchRelaxCommand();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+  WinchRelaxCommand();
+  virtual void Initialize();
+  virtual void Execute();
+  virtual bool IsFinished();
+  virtual void End();
+  virtual void Interrupted();
 };
 
 #endif

@@ -8,9 +8,10 @@
  *
  * @author p
  */
-class MiddleCommandGroup: public CommandGroup {
-public:	
-	MiddleCommandGroup();
+class MiddleCommandGroup: public CommandGroup
+{
+public:
+  MiddleCommandGroup();
 };
 
 #endif

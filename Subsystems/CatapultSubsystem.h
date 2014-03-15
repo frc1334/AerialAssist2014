@@ -6,7 +6,7 @@
 #include "WPILib.h"
 
 #include "../DoubleSolenoidProxy.h" //TODO:remove when we get singles
-											// ^ programming has plenty of singles
+// ^ programming has plenty of singles
 
 /**
 Manages interactions with the catapult and pickup
@@ -40,7 +40,7 @@ public:
   void InitDefaultCommand();
 
   enum WinchDirection { Forward, Reverse, Off };
-  
+
   /**
     Sets the solenoid positions to match
     a given setting as defined in ShootState

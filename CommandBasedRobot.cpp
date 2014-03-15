@@ -49,7 +49,7 @@ private:
   /** Initializes a teleop session */
   virtual void TeleopInit()
   {
-	compressor->Start();
+    compressor->Start();
     ((Command*)choice->GetSelected())->Cancel();
     CommandBase::catapult->zeroWinch();
     //(new LoadCatapultGroup())->Start();
@@ -65,7 +65,7 @@ private:
 
   virtual void TestPeriodic()
   {
-	//printf("Switch readout: %f", CommandBase::catapult->getWinchLimitSwitch() ? 1.0f : 0.0f);
+    //printf("Switch readout: %f", CommandBase::catapult->getWinchLimitSwitch() ? 1.0f : 0.0f);
     //lw->Run();
   }
 };

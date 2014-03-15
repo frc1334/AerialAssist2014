@@ -8,13 +8,14 @@
  *
  * @author p
  */
-class DummySubsystem: public Subsystem {
+class DummySubsystem: public Subsystem
+{
 private:
-	// It's desirable that everything possible under private except
-	// for methods that implement subsystem capabilities
+  // It's desirable that everything possible under private except
+  // for methods that implement subsystem capabilities
 public:
-	DummySubsystem();
-	void InitDefaultCommand();
+  DummySubsystem();
+  void InitDefaultCommand();
 };
 
 #endif

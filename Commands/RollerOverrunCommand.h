@@ -11,14 +11,14 @@
 class RollerOverrunCommand: public CommandBase
 {
 private:
-	Timer *timer;
+  Timer *timer;
 public:
-	RollerOverrunCommand();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+  RollerOverrunCommand();
+  virtual void Initialize();
+  virtual void Execute();
+  virtual bool IsFinished();
+  virtual void End();
+  virtual void Interrupted();
 };
 
 #endif
