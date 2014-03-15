@@ -7,6 +7,7 @@
 #include "Commands/WinchRewindCommand.h"
 #include "Commands/WinchRelaxCommand.h"
 #include "Commands/LoadCatapultGroup.h"
+#include "Subsystems/CatapultSubsystem.h"
 #include "Robotmap.h"
 
 /**
@@ -59,7 +60,7 @@ private:
   virtual void TeleopPeriodic()
   {
     Scheduler::GetInstance()->Run();
-    printf("L:%f S-R:%f W-L:%f E:%f\n", (double)CommandBase::catapult->isInLow(), (double)CommandBase::catapult->safeReload(), (double)CommandBase::catapult->getWinchLatch(), (double)CommandBase::catapult->winchEncoder->GetDistance());
+    printf("L:%f S-R:%f W-L:%f E:%f W:%d\n", (double)CommandBase::catapult->isInLow(), (double)CommandBase::catapult->safeReload(), (double)CommandBase::catapult->getWinchLimitSwitch(), (double)CommandBase::catapult->winchEncoder->GetDistance(), isRunning);
   }
 
   virtual void TestPeriodic()

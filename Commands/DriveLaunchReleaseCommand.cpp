@@ -2,7 +2,7 @@
 
 DriveLaunchReleaseCommand::DriveLaunchReleaseCommand()
 {
-  Requires (catapult);
+  Requires(dummy);
   timer = new Timer();
 }
 

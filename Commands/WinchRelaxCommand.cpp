@@ -3,7 +3,7 @@
 
 WinchRelaxCommand::WinchRelaxCommand()
 {
-  Requires(catapult);
+  Requires(dummy);
 }
 
 void WinchRelaxCommand::Initialize()
@@ -12,7 +12,7 @@ void WinchRelaxCommand::Initialize()
 
 void WinchRelaxCommand::Execute()
 {
-  catapult->setWinch(1.0f);
+  catapult->setWinch(CatapultSubsystem::Forward);
 }
 
 bool WinchRelaxCommand::IsFinished()
@@ -22,9 +22,10 @@ bool WinchRelaxCommand::IsFinished()
 
 void WinchRelaxCommand::End()
 {
-  catapult->setWinch(0.0f);
+  catapult->setWinch(CatapultSubsystem::Off);
 }
 
 void WinchRelaxCommand::Interrupted()
 {
+  catapult->setWinch(CatapultSubsystem::Off);
 }

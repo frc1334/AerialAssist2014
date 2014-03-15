@@ -25,7 +25,6 @@ private:
   DoubleSolenoidProxy* launcherMidlock;
   DoubleSolenoidProxy* sideConstraints;
   DigitalInput* winchLimitSwitch;
-  DigitalInput* winchLatchSwitch;
 
   //P1-launcherTilt
   //P2-launcherOpen
@@ -40,6 +39,8 @@ public:
   /** Initializes the default command */
   void InitDefaultCommand();
 
+  enum WinchDirection { Forward, Reverse, Off };
+  
   /**
     Sets the solenoid positions to match
     a given setting as defined in ShootState
@@ -48,7 +49,7 @@ public:
   /**
     Sets the winch motor direction and speed
   */
-  void setWinch(float speed);
+  void setWinch(WinchDirection direction);
   /**
     Sets the robot into pick up
   */
@@ -57,10 +58,6 @@ public:
     Tells you position of shooter
   */
   bool getWinchLimitSwitch();
-  /**
-    sdfsdfsdf
-  */
-  bool getWinchLatch();
   /**
     Locks the shooter mech.
    */
@@ -89,7 +86,7 @@ public:
     asdfasdf
    */
   bool isInLow();
-  inline bool safeReload();
+  bool safeReload();
 };
 
 #endif

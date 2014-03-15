@@ -4,6 +4,7 @@
 #include "Subsystems/VisionSubsystem.h"
 #include "Subsystems/CatapultSubsystem.h"
 #include "Subsystems/DriveTrainSubsystem.h"
+#include "Subsystems/DummySubsystem.h"
 #include "Commands/Command.h"
 #include "OI.h"
 
@@ -25,6 +26,8 @@ public:
   static CatapultSubsystem* catapult;
   /** Drivetrain subsystem instance */
   static DriveTrainSubsystem* drivetrain;
+  /** Dummy subsystem instance */
+  static DummySubsystem* dummy;
   /** Operator interface instance */
   static OI* oi;
 };

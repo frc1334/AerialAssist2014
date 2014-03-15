@@ -17,13 +17,15 @@ void OperatorPickup1Command::Execute()
 
 bool OperatorPickup1Command::IsFinished()
 {
-  return false; // run once
+  return false;
 }
 
 void OperatorPickup1Command::End()
 {
+  catapult->setPickup(0.0f);
 }
 
 void OperatorPickup1Command::Interrupted()
 {
+  catapult->setPickup(0.0f);
 }

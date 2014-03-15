@@ -13,7 +13,6 @@ CatapultSubsystem::CatapultSubsystem() : Subsystem("CatapultSubsystem")
   launcherMidlock = new DoubleSolenoidProxy(LAUNCHER_MIDLOCK_SOLENOID);
   sideConstraints = new DoubleSolenoidProxy(SIDE_CONSTRAINT_SOLENOID);
   winchLimitSwitch = new DigitalInput(WINCH_SWITCH);
-  winchLatchSwitch = new DigitalInput(WINCH_LOADED_SWITCH);
   winchEncoder = new Encoder(WINCH_ENCODER_A, WINCH_ENCODER_B);
 }
 
@@ -37,11 +36,9 @@ void CatapultSubsystem::setState(ShootState state)
 	launcherMidlock->Set(true);
 	break;
   case Pickup2Press:
-	launcherTilt->Set(true);
     rollerExtend->Set(false);
     break;
   case Pickup2Release:
-	launcherTilt->Set(true);
     rollerExtend->Set(true);
     break;
   case Catch:
@@ -51,7 +48,7 @@ void CatapultSubsystem::setState(ShootState state)
   case Pass:
     break;
   case Launch:
-	if (!isInLow())
+	if (safeReload())
 	{
 	  unlock();
 	}
@@ -59,12 +56,25 @@ void CatapultSubsystem::setState(ShootState state)
   }
 }
 
-void CatapultSubsystem::setWinch(float speed)
+void CatapultSubsystem::setWinch(WinchDirection direction)
 {
-  if (safeReload())
+  switch (direction)
   {
-    winch1->Set(speed);
-    winch2->Set(speed);
+  case Forward:
+	  winch1->Set(1.0f);
+	  winch2->Set(1.0f);
+	  break;
+  case Reverse:
+	  if (safeReload())
+	  {
+	    winch1->Set(-1.0f);
+	    winch2->Set(-1.0f);
+	  }
+	  break;
+  case Off:
+	  winch1->Set(0.0f);
+	  winch2->Set(0.0f);
+	  break;
   }
 }
 
@@ -76,11 +86,6 @@ void CatapultSubsystem::setPickup(float speed)
 bool CatapultSubsystem::getWinchLimitSwitch()
 {
   return !winchLimitSwitch->Get();
-}
-
-bool CatapultSubsystem::getWinchLatch()
-{
-  return winchLatchSwitch->Get();
 }
 
 void CatapultSubsystem::lock()
@@ -116,7 +121,7 @@ double CatapultSubsystem::readWinch()
 
 bool CatapultSubsystem::safeReload()
 {
-  return (!isInLow()) && getWinchLatch();
+  return !isInLow();
 }
 
 bool CatapultSubsystem::isInLow()

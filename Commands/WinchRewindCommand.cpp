@@ -4,19 +4,20 @@ is finished is set to whether the limit switch is pressed*/
 
 WinchRewindCommand::WinchRewindCommand()
 {
-  Requires(catapult);
+  Requires(dummy);
+  isRunning = false;
 }
 
 void WinchRewindCommand::Initialize()
 {
-
 }
 
 void WinchRewindCommand::Execute()
 {
-  catapult->setWinch(-1.0);
+  catapult->setWinch(CatapultSubsystem::Reverse);
   catapult->close();
   catapult->unlock();
+  isRunning = true;
 }
 
 bool WinchRewindCommand::IsFinished()
@@ -26,16 +27,19 @@ bool WinchRewindCommand::IsFinished()
 
 void WinchRewindCommand::End()
 {
-  catapult->setWinch(0);
+  catapult->setWinch(CatapultSubsystem::Off);
   catapult->lock();
+  isRunning = false;
 }
 
 void WinchRewindCommand::Interrupted()
 {
+  isRunning = false;
 }
 
 void WinchRewindCommand::Start()
 {
   CommandBase::Start();
   catapult->zeroWinch();
+  isRunning = true;
 }

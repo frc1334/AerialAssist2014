@@ -21,4 +21,6 @@ public:
   void Start();
 };
 
+static bool isRunning = false;
+
 #endif

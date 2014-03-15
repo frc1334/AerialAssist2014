@@ -12,6 +12,7 @@ CommandBase::CommandBase() : Command()
 VisionSubsystem* CommandBase::vision = NULL;
 CatapultSubsystem* CommandBase::catapult = NULL;
 DriveTrainSubsystem* CommandBase::drivetrain = NULL;
+DummySubsystem* CommandBase::dummy = NULL;
 OI* CommandBase::oi = NULL;
 
 void CommandBase::init()
@@ -19,6 +20,7 @@ void CommandBase::init()
   vision = new VisionSubsystem();
   catapult = new CatapultSubsystem();
   drivetrain = new DriveTrainSubsystem();
+  dummy = new DummySubsystem();
 
   oi = new OI();
 }
