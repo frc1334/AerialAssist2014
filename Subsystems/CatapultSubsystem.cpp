@@ -32,8 +32,6 @@ void CatapultSubsystem::setState(ShootState state)
     launcherMidlock->Set(false);
     sideConstraints->Set(false);
     break;
-  case Middle:
-    launcherMidlock->Set(true);
     break;
   case Pickup2Press:
     rollerExtend->Set(false);
@@ -47,6 +45,8 @@ void CatapultSubsystem::setState(ShootState state)
     break;
   case Pass:
     break;
+  case Low:
+	launcherTilt->Set(true);
   case Launch:
     if (safeReload())
     {
@@ -61,17 +61,24 @@ void CatapultSubsystem::setWinch(WinchDirection direction)
   switch (direction)
   {
   case Forward:
+      printf("Winch Forward");
     winch1->Set(1.0f);
     winch2->Set(1.0f);
     break;
   case Reverse:
+      printf("Winch Reverse");
     if (safeReload())
     {
       winch1->Set(-1.0f);
       winch2->Set(-1.0f);
     }
+    else
+    {
+      printf("Winch Motion Prevented");
+    }
     break;
   case Off:
+      printf("Winch Off");
     winch1->Set(0.0f);
     winch2->Set(0.0f);
     break;
@@ -85,7 +92,7 @@ void CatapultSubsystem::setPickup(float speed)
 
 bool CatapultSubsystem::getWinchLimitSwitch()
 {
-  return !winchLimitSwitch->Get();
+  return winchLimitSwitch->Get();
 }
 
 void CatapultSubsystem::lock()

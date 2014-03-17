@@ -19,6 +19,7 @@ void AutonomousDriveCommand::Execute()
 {
   if (timer->Get() == 0)
     timer->Start();
+  printf("%f\n", timer->Get());
   drivetrain->arcadeDrive(drive, turn);
 }
 

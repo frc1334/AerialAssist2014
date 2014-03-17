@@ -17,7 +17,7 @@ void OperatorHighCommand::Execute()
 
 bool OperatorHighCommand::IsFinished()
 {
-  return false; // we want this to run once on press
+  return true; // we want this to run once on press
   // so immediately finish
 }
 

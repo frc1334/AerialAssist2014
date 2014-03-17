@@ -11,7 +11,7 @@ void OperatorPickup1Command::Initialize()
 
 void OperatorPickup1Command::Execute()
 {
-  catapult->setPickup(-1.0f);
+  catapult->setPickup(1.0f);
   catapult->setState(Pickup2Press);
 }
 

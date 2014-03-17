@@ -2,6 +2,6 @@
 #define SHOOTSTATE_H
 
 /** Defines the various positions for the launcher system */
-enum ShootState { HighShot, Middle, Pickup2Press, Pickup2Release, Catch, Pass, Launch };
+enum ShootState { HighShot, Pickup2Press, Pickup2Release, Catch, Pass, Launch, Low };
 
 #endif

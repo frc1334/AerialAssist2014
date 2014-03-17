@@ -7,7 +7,6 @@
 #include "Commands/DriveLaunchReleaseCommand.h"
 #include "Commands/OperatorPassCommand.h"
 #include "Commands/LoadCatapultGroup.h"
-#include "Commands/MiddleCommandGroup.h"
 #include "Commands/RollerOverrunCommand.h"
 
 OI::OI()

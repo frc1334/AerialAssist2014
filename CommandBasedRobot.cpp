@@ -1,9 +1,7 @@
 #include "WPILib.h"
 #include "CommandBase.h"
 #include "Commands/Command.h"
-#include "Commands/AutonomousModeLeft.h"
-#include "Commands/AutonomousModeCenter.h"
-#include "Commands/AutonomousModeRight.h"
+#include "Commands/OneBallCommandGroup.h"
 #include "Commands/WinchRewindCommand.h"
 #include "Commands/WinchRelaxCommand.h"
 #include "Commands/LoadCatapultGroup.h"
@@ -18,7 +16,7 @@ class CommandBasedRobot : public IterativeRobot
 private:
   LiveWindow* lw;
   Compressor* compressor;
-  SendableChooser* choice;
+  Command* autoCommand;
 
   /** Runs when the robot starts up */
   virtual void RobotInit()
@@ -26,18 +24,17 @@ private:
     CommandBase::init();
     lw = LiveWindow::GetInstance();
     compressor = new Compressor(COMPRESSOR_RELAY, COMPRESSOR_SWITCH);
-    choice = new SendableChooser();
-    choice->AddDefault("Center Mode", new AutonomousModeCenter());
-    choice->AddObject("Left Mode", new AutonomousModeLeft());
-    choice->AddObject("Right Mode", new AutonomousModeRight());
-    SmartDashboard::PutData("Autonomous Mode", choice);
+    autoCommand = new OneBallCommandGroup();
+    //choice->AddDefault("One Ball", new OneBallCommandGroup());
+    //SmartDashboard::PutData("Autonomous Mode", choice);
   }
 
   /** Initializes an autonomous session */
   virtual void AutonomousInit()
   {
     compressor->Start();
-    ((Command*)choice->GetSelected())->Start();
+    CommandBase::catapult->zeroWinch();
+    autoCommand->Start();
   }
 
   /** Runs continously during autonomous */
@@ -50,7 +47,6 @@ private:
   virtual void TeleopInit()
   {
     compressor->Start();
-    ((Command*)choice->GetSelected())->Cancel();
     CommandBase::catapult->zeroWinch();
     //(new LoadCatapultGroup())->Start();
     //(new LaunchCommandGroup())->Start();
@@ -60,7 +56,7 @@ private:
   virtual void TeleopPeriodic()
   {
     Scheduler::GetInstance()->Run();
-    printf("L:%f S-R:%f W-L:%f E:%f W:%d\n", (double)CommandBase::catapult->isInLow(), (double)CommandBase::catapult->safeReload(), (double)CommandBase::catapult->getWinchLimitSwitch(), (double)CommandBase::catapult->winchEncoder->GetDistance(), isRunning);
+    //printf("L:%d S-R:%d W-L:%d E:%d W:%f\n", CommandBase::catapult->isInLow(), CommandBase::catapult->safeReload(), CommandBase::catapult->getWinchLimitSwitch(), CommandBase::catapult->winchEncoder->GetDistance(), isRunning);
   }
 
   virtual void TestPeriodic()

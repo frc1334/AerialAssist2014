@@ -39,6 +39,7 @@ void WinchRewindCommand::Interrupted()
 
 void WinchRewindCommand::Start()
 {
+  printf("Winch Rewind Started");
   CommandBase::Start();
   catapult->zeroWinch();
   isRunning = true;

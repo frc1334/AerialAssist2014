@@ -11,7 +11,7 @@ void OperatorLowCommand::Initialize()
 
 void OperatorLowCommand::Execute()
 {
-  catapult->setState(Pickup2Press);
+  catapult->setState(Low);
 }
 
 bool OperatorLowCommand::IsFinished()
