@@ -67,15 +67,15 @@ public:
    */
   void unlock();
   /**
-    Resets winch position encoder
+   this will open the set of arms for the catapult mech.
    */
   void open();
   /**
-    asdfasdf
-   */
+  this will close the set of arms for the catapult mech.
+  */
   void close();
   /**
-    asdfasdf
+   this will reset and start the winchencoder
    */
   void zeroWinch();
   /**
@@ -83,9 +83,12 @@ public:
    */
   double readWinch();
   /**
-    asdfasdf
+   puts robot in low position
    */
   bool isInLow();
+  /**
+   will put robot in low position and picks up a new ball.
+   */
   bool safeReload();
 };
 
