@@ -75,19 +75,19 @@ public:
   */
   void close();
   /**
-   this will reset and start the winchencoder
+   this will reset and start the winchencoder.
    */
   void zeroWinch();
   /**
-    Reads value from winch encoder
+    Reads value from winch encoder.
    */
   double readWinch();
   /**
-   puts robot in low position
+   will tell you if the robot is in low position.
    */
   bool isInLow();
   /**
-   will put robot in low position and picks up a new ball.
+   will tell you if it is safe to reload the robot.
    */
   bool safeReload();
 };
