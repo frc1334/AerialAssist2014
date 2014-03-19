@@ -4,10 +4,8 @@
 #include "WPILib.h"
 
 /**
- *
- *
- * @author p
- */
+Prevents shooter from shooting in the low position
+*/
 class DummySubsystem: public Subsystem
 {
 private:

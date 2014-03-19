@@ -67,25 +67,28 @@ public:
    */
   void unlock();
   /**
-    Resets winch position encoder
+   this will open the set of arms for the catapult mech.
    */
   void open();
   /**
-    asdfasdf
-   */
+  this will close the set of arms for the catapult mech.
+  */
   void close();
   /**
-    asdfasdf
+   this will reset and start the winchencoder.
    */
   void zeroWinch();
   /**
-    Reads value from winch encoder
+    Reads value from winch encoder.
    */
   double readWinch();
   /**
-    asdfasdf
+   will tell you if the robot is in low position.
    */
   bool isInLow();
+  /**
+   will tell you if it is safe to reload the robot.
+   */
   bool safeReload();
 };
 

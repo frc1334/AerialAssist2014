@@ -4,9 +4,7 @@
 #include "../CommandBase.h"
 
 /**
- *
- *
- * @author p
+ The rollers roll for a few seconds after the catapult is released
  */
 class RollerOverrunCommand: public CommandBase
 {
