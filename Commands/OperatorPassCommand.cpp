@@ -11,7 +11,7 @@ void OperatorPassCommand::Initialize()
 
 void OperatorPassCommand::Execute()
 {
-  catapult->setPickup(1.0);
+  catapult->setPickup(-1.0);
 }
 
 bool OperatorPassCommand::IsFinished()
