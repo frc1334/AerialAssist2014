@@ -20,12 +20,10 @@ Driving is done using two XBOX controllers.  Controller one is used for driving,
 
 ### Operator Remote #####
 
-**A** - Pick up position 1  
-**A** - Pick up position 2  
-{When A is pressed(pick up position 1)the roller goes out and when A is released(pick up position 2)the roller comes in}
-**B** - Low position   
-**Y** - High position   
-**Right Bumper** - Catch (While held)   
+**A** - When A is pressed (pick up position 1) the roller goes out and when A is released (pick up position 2) the roller comes in
+**B** - Low position
+**Y** - High position
+**Right Bumper** - Catch (While held)
 
 
 [xbox]: xbox-controller.png  "XBOX Controller"
