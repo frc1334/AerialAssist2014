@@ -46,7 +46,7 @@ void CatapultSubsystem::setState(ShootState state)
   case Pass:
     break;
   case Low:
-	launcherTilt->Set(true);
+    launcherTilt->Set(true);
   case Launch:
     if (safeReload())
     {
@@ -61,12 +61,12 @@ void CatapultSubsystem::setWinch(WinchDirection direction)
   switch (direction)
   {
   case Forward:
-      printf("Winch Forward");
+    printf("Winch Forward");
     winch1->Set(1.0f);
     winch2->Set(1.0f);
     break;
   case Reverse:
-      printf("Winch Reverse");
+    printf("Winch Reverse");
     if (safeReload())
     {
       winch1->Set(-1.0f);
@@ -78,7 +78,7 @@ void CatapultSubsystem::setWinch(WinchDirection direction)
     }
     break;
   case Off:
-      printf("Winch Off");
+    printf("Winch Off");
     winch1->Set(0.0f);
     winch2->Set(0.0f);
     break;

@@ -3,9 +3,10 @@
 
 #include "Commands/CommandGroup.h"
 
-class OneBallCommandGroup: public CommandGroup {
-public:	
-	OneBallCommandGroup();
+class OneBallCommandGroup: public CommandGroup
+{
+public:
+  OneBallCommandGroup();
 };
 
 #endif
