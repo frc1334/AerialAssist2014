@@ -17,7 +17,9 @@ private:
   Talon* left2;
   Talon* right1;
   Talon* right2;
-  DoubleSolenoidProxy* shifter;
+  Solenoid* shifter;
+  Encoder* leftDrive;
+  Encoder* rightDrive;
 public:
   DriveTrainSubsystem();
 
@@ -36,6 +38,14 @@ public:
     Changes the state of the gearshift
   */
   void shift(bool highGear);
+  /**
+    Zeroes the drive encoders
+   */
+  void zeroDrive();
+  /**
+    Reads the distance travelled
+   */
+  double getAbsoluteDistance();
 };
 
 #endif

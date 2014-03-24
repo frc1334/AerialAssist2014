@@ -1,4 +1,5 @@
 #include "DriveLaunchReleaseCommand.h"
+#include "../Timing.h"
 
 DriveLaunchReleaseCommand::DriveLaunchReleaseCommand()
 {
@@ -24,7 +25,7 @@ void DriveLaunchReleaseCommand::Execute()
 // Make this return true when this Command no longer needs to run execute()
 bool DriveLaunchReleaseCommand::IsFinished()
 {
-  return timer->HasPeriodPassed(0.4f);
+  return timer->HasPeriodPassed(LAUNCH_MOVE_DELAY);
 }
 
 // Called once after isFinished returns true

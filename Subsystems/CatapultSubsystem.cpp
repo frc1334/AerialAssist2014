@@ -6,14 +6,17 @@ CatapultSubsystem::CatapultSubsystem() : Subsystem("CatapultSubsystem")
   winch1 = new Talon(WINCH_TALON_1);
   winch2 = new Talon(WINCH_TALON_2);
   pickup = new Talon(PICKUP_TALON);
-  launcherTilt = new DoubleSolenoidProxy(LAUNCHER_TILT_SOLENOID);
-  launcherOpen = new DoubleSolenoidProxy(LAUNCHER_OPEN_SOLENOID);
+  launcherTilt = new Solenoid(LAUNCHER_TILT_SOLENOID);
+  launcherOpen = new Solenoid(LAUNCHER_OPEN_SOLENOID);
   rollerExtend = new Solenoid(ROLLER_EXTEND_SOLENOID);
-  latch = new DoubleSolenoidProxy(LATCH_SOLENOID);
-  launcherMidlock = new DoubleSolenoidProxy(LAUNCHER_MIDLOCK_SOLENOID);
-  sideConstraints = new DoubleSolenoidProxy(SIDE_CONSTRAINT_SOLENOID);
+  latch = new DoubleSolenoid(LATCH_SOLENOID_A, LATCH_SOLENOID_B);
+//  launcherMidlock = new Solenoid(LAUNCHER_MIDLOCK_SOLENOID);
+  sideConstraints = new Solenoid(SIDE_CONSTRAINT_SOLENOID);
   winchLimitSwitch = new DigitalInput(WINCH_SWITCH);
   winchEncoder = new Encoder(WINCH_ENCODER_A, WINCH_ENCODER_B);
+  winchRamp = new Timer();
+  winchRamp->Stop();
+  winchRamp->Reset();
 }
 
 void CatapultSubsystem::InitDefaultCommand()
@@ -29,7 +32,7 @@ void CatapultSubsystem::setState(ShootState state)
     launcherOpen->Set(false);
     rollerExtend->Set(true);
     //unlock();
-    launcherMidlock->Set(false);
+    //launcherMidlock->Set(false);
     sideConstraints->Set(false);
     break;
     break;
@@ -49,9 +52,7 @@ void CatapultSubsystem::setState(ShootState state)
     launcherTilt->Set(true);
   case Launch:
     if (safeReload())
-    {
       unlock();
-    }
     break;
   }
 }
@@ -62,8 +63,13 @@ void CatapultSubsystem::setWinch(WinchDirection direction)
   {
   case Forward:
     printf("Winch Forward");
-    winch1->Set(1.0f);
-    winch2->Set(1.0f);
+    if (winchRamp->Get() == 0)
+      winchRamp->Start();
+    else
+    {
+      winch1->Set(winchRamp->Get() > 1.0 ? 1.0f : winchRamp->Get()); // TODO std::max
+      winch2->Set(winchRamp->Get() > 1.0 ? 1.0f : winchRamp->Get());
+    }
     break;
   case Reverse:
     printf("Winch Reverse");
@@ -72,15 +78,15 @@ void CatapultSubsystem::setWinch(WinchDirection direction)
       winch1->Set(-1.0f);
       winch2->Set(-1.0f);
     }
-    else
-    {
-      printf("Winch Motion Prevented");
-    }
+    winchRamp->Stop();
+    winchRamp->Reset();
     break;
   case Off:
     printf("Winch Off");
     winch1->Set(0.0f);
     winch2->Set(0.0f);
+    winchRamp->Stop();
+    winchRamp->Reset();
     break;
   }
 }
@@ -97,12 +103,12 @@ bool CatapultSubsystem::getWinchLimitSwitch()
 
 void CatapultSubsystem::lock()
 {
-  latch->Set(true);
+  latch->Set(DoubleSolenoid::kForward);
 }
 
 void CatapultSubsystem::unlock()
 {
-  latch->Set(false);
+  latch->Set(DoubleSolenoid::kReverse);
 }
 
 void CatapultSubsystem::open()

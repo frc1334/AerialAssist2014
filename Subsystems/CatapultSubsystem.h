@@ -18,13 +18,14 @@ private:
   Talon* winch1;
   Talon* winch2;
   Talon* pickup;
-  DoubleSolenoidProxy* launcherTilt;
-  DoubleSolenoidProxy* launcherOpen;
+  Solenoid* launcherTilt;
+  Solenoid* launcherOpen;
   Solenoid* rollerExtend;
-  DoubleSolenoidProxy* latch;
-  DoubleSolenoidProxy* launcherMidlock;
-  DoubleSolenoidProxy* sideConstraints;
+  DoubleSolenoid* latch;
+  //Solenoid* launcherMidlock;
+  Solenoid* sideConstraints;
   DigitalInput* winchLimitSwitch;
+  Timer* winchRamp;
 
   //P1-launcherTilt
   //P2-launcherOpen

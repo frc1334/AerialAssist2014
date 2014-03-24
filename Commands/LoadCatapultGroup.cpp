@@ -6,6 +6,6 @@
 LoadCatapultGroup::LoadCatapultGroup()
 {
   AddSequential(new WinchRewindCommand());
-  AddSequential(new WaitCommand(0.1));
+  AddSequential(new WaitCommand(0.3));
   AddSequential(new WinchRelaxCommand());
 }
