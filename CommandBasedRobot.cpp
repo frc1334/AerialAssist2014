@@ -1,9 +1,11 @@
 #include "WPILib.h"
 #include "CommandBase.h"
 #include "Commands/Command.h"
-#include "Commands/OneBallCommandGroup.h"
-#include "Commands/TwoBallCommandGroup.h"
-#include "Commands/FastOneBallCommandGroup.h"
+#include "Commands/AutonomousModeOneBall.h"
+#include "Commands/AutonomousModeTwoBall.h"
+#include "Commands/AutonomousModeFastOneBall.h"
+#include "Commands/AutonomousModeRamGoal.h"
+#include "Commands/AutonomousModeLowGoal.h"
 #include "Commands/AutonomousDriveCommand.h"
 #include "Subsystems/CatapultSubsystem.h"
 #include "Robotmap.h"
@@ -25,12 +27,13 @@ private:
     CommandBase::init();
     lw = LiveWindow::GetInstance();
     compressor = new Compressor(COMPRESSOR_SWITCH, COMPRESSOR_RELAY);
-    autoCommand = new OneBallCommandGroup();
     autoMode = new SendableChooser();
-    autoMode->AddDefault("One Ball", new OneBallCommandGroup());
-    autoMode->AddObject("Fast One Ball", new FastOneBallCommandGroup());
-    autoMode->AddObject("Deux Ball", new TwoBallCommandGroup());
+    autoMode->AddDefault("One Ball", new AutonomousModeOneBall());
+    autoMode->AddObject("Fast One Ball (preload)", new AutonomousModeFastOneBall());
+    autoMode->AddObject("Deux Ball", new AutonomousModeTwoBall());
     autoMode->AddObject("Just Friggin Drive", new AutonomousDriveCommand(1.0f, 0.0f, 2.0));
+    autoMode->AddObject("Ram the one point goal", new AutonomousModeRamGoal());
+    autoMode->AddObject("Low Goal", new AutonomousModeLowGoal());
     SmartDashboard::PutData("Autonomous Mode", autoMode);
   }
 

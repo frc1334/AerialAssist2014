@@ -1,4 +1,4 @@
-#include "OneBallCommandGroup.h"
+#include "AutonomousModeOneBall.h"
 #include "LoadCatapultGroup.h"
 #include "Commands/WaitCommand.h"
 #include "OperatorLowCommand.h"
@@ -12,7 +12,7 @@
 #include "DriveLaunchReleaseCommand.h"
 #include "../Timing.h"
 
-OneBallCommandGroup::OneBallCommandGroup()
+AutonomousModeOneBall::AutonomousModeOneBall()
 {
   AddSequential(new AutonomousLowGearCommand());
   AddSequential(new LoadCatapultGroup());

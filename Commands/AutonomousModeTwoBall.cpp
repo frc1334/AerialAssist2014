@@ -1,4 +1,4 @@
-#include "TwoBallCommandGroup.h"
+#include "AutonomousModeTwoBall.h"
 #include "LoadCatapultGroup.h"
 #include "Commands/WaitCommand.h"
 #include "OperatorLowCommand.h"
@@ -8,17 +8,15 @@
 #include "AutonomousPickupCommand.h"
 #include "AutonomousDriveCommand.h"
 #include "AutonomousLowGearCommand.h"
+#include "AutonomousCoastCommand.h"
 #include "DriveLaunchReleaseCommand.h"
 #include "WinchRewindCommand.h"
 #include "WinchRelaxCommand.h"
 #include "../Timing.h"
 
-TwoBallCommandGroup::TwoBallCommandGroup()
+AutonomousModeTwoBall::AutonomousModeTwoBall()
 {
   AddSequential(new AutonomousLowGearCommand());
-  //AddSequential(new WinchRewindCommand());
-  //AddSequential(new WaitCommand(0.1));
-  //AddParallel(new WinchRelaxCommand());
   AddSequential(new AutonomousDriveCommand(1.0f, TURN_CORRECTION, 2.2));
   AddParallel(new OperatorPickup2Command(0.5));
   AddSequential(new AutonomousCoastCommand(1.0f, TURN_CORRECTION, 0.0f, TURN_CORRECTION, 0.5));

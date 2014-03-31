@@ -1,4 +1,4 @@
-#include "FastOneBallCommandGroup.h"
+#include "AutonomousModeFastOneBall.h"
 #include "LoadCatapultGroup.h"
 #include "Commands/WaitCommand.h"
 #include "OperatorLowCommand.h"
@@ -13,15 +13,9 @@
 #include "WinchRelaxCommand.h"
 #include "../Timing.h"
 
-FastOneBallCommandGroup::FastOneBallCommandGroup()
+AutonomousModeFastOneBall::AutonomousModeFastOneBall()
 {
   AddSequential(new AutonomousLowGearCommand());
-  //AddSequential(new WinchRewindCommand());
-  //AddSequential(new WaitCommand(0.1));
-  //AddParallel(new WinchRelaxCommand());
-  //AddSequential(new OperatorLowCommand());
-  //AddSequential(new AutonomousPickupCommand(1.0));
-  //AddSequential(new OperatorPickup2Command());
   AddParallel(new OperatorHighCommand());
   AddSequential(new AutonomousDriveCommand(1.0f, TURN_CORRECTION, 2.2));
   AddSequential(new DriveLaunchReleaseCommand());
