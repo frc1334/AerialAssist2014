@@ -6,7 +6,7 @@
 class AutonomousModeTwoBall: public CommandGroup
 {
 public:
-	AutonomousModeTwoBall();
+  AutonomousModeTwoBall();
 };
 
 #endif

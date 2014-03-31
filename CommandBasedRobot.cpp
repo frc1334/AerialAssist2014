@@ -57,7 +57,7 @@ private:
   /** Initializes a teleop session */
   virtual void TeleopInit()
   {
-	autoCommand->Cancel();
+    autoCommand->Cancel();
     compressor->Start();
     CommandBase::catapult->zeroWinch();
     CommandBase::drivetrain->zeroDrive();

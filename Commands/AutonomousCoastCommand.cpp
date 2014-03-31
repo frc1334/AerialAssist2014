@@ -13,33 +13,33 @@ AutonomousCoastCommand::AutonomousCoastCommand(float startDrive, float startTurn
 
 void AutonomousCoastCommand::Initialize()
 {
-	  timer->Stop();
-	  timer->Reset();
+  timer->Stop();
+  timer->Reset();
 }
 
 void AutonomousCoastCommand::Execute()
 {
-	  if (timer->Get() == 0)
-	    timer->Start();
-	  float driveLength = endDrive - startDrive;
-	  float turnLength = endTurn - startTurn;
-	  drivetrain->arcadeDrive(startDrive + (driveLength * (time - timer->Get())), startTurn + (turnLength * (time - timer->Get())));
+  if (timer->Get() == 0)
+    timer->Start();
+  float driveLength = endDrive - startDrive;
+  float turnLength = endTurn - startTurn;
+  drivetrain->arcadeDrive(startDrive + (driveLength * (time - timer->Get())), startTurn + (turnLength * (time - timer->Get())));
 }
 
 bool AutonomousCoastCommand::IsFinished()
 {
-	  return timer->HasPeriodPassed(time);
+  return timer->HasPeriodPassed(time);
 }
 
 void AutonomousCoastCommand::End()
 {
-	  drivetrain->arcadeDrive(0, 0);
-	  timer->Stop();
-	  timer->Reset();
+  drivetrain->arcadeDrive(0, 0);
+  timer->Stop();
+  timer->Reset();
 }
 
 void AutonomousCoastCommand::Interrupted()
 {
-	  timer->Stop();
-	  timer->Reset();
+  timer->Stop();
+  timer->Reset();
 }

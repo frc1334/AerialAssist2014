@@ -8,9 +8,10 @@
  *
  * @author p
  */
-class AutonomousModeRamGoal: public CommandGroup {
-public:	
-	AutonomousModeRamGoal();
+class AutonomousModeRamGoal: public CommandGroup
+{
+public:
+  AutonomousModeRamGoal();
 };
 
 #endif

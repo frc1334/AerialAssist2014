@@ -8,17 +8,18 @@
  *
  * @author p
  */
-class AutonomousDistanceDriveCommand: public CommandBase {
+class AutonomousDistanceDriveCommand: public CommandBase
+{
 private:
   float drive, turn;
   double distance;
 public:
-	AutonomousDistanceDriveCommand(float drive, float turn, double distance);
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+  AutonomousDistanceDriveCommand(float drive, float turn, double distance);
+  virtual void Initialize();
+  virtual void Execute();
+  virtual bool IsFinished();
+  virtual void End();
+  virtual void Interrupted();
 };
 
 #endif

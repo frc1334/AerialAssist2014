@@ -8,14 +8,15 @@
  *
  * @author p
  */
-class AutonomousLowGearCommand: public CommandBase {
+class AutonomousLowGearCommand: public CommandBase
+{
 public:
-	AutonomousLowGearCommand();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+  AutonomousLowGearCommand();
+  virtual void Initialize();
+  virtual void Execute();
+  virtual bool IsFinished();
+  virtual void End();
+  virtual void Interrupted();
 };
 
 #endif

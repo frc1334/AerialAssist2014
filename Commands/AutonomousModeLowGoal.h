@@ -8,9 +8,10 @@
  *
  * @author p
  */
-class AutonomousModeLowGoal: public CommandGroup {
-public:	
-	AutonomousModeLowGoal();
+class AutonomousModeLowGoal: public CommandGroup
+{
+public:
+  AutonomousModeLowGoal();
 };
 
 #endif
