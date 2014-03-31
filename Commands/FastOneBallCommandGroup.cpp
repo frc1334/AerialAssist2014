@@ -11,6 +11,7 @@
 #include "DriveLaunchReleaseCommand.h"
 #include "WinchRewindCommand.h"
 #include "WinchRelaxCommand.h"
+#include "../Timing.h"
 
 FastOneBallCommandGroup::FastOneBallCommandGroup()
 {
@@ -22,6 +23,6 @@ FastOneBallCommandGroup::FastOneBallCommandGroup()
   //AddSequential(new AutonomousPickupCommand(1.0));
   //AddSequential(new OperatorPickup2Command());
   AddParallel(new OperatorHighCommand());
-  AddSequential(new AutonomousDriveCommand(1.0f, 0.0f, 2.2));
+  AddSequential(new AutonomousDriveCommand(1.0f, TURN_CORRECTION, 2.2));
   AddSequential(new DriveLaunchReleaseCommand());
 }

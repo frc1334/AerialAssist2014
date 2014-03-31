@@ -1,10 +1,10 @@
 #include "OperatorPickup2Command.h"
-#include "../Timing.h"
 
-OperatorPickup2Command::OperatorPickup2Command()
+OperatorPickup2Command::OperatorPickup2Command(float overrun)
 {
   Requires(catapult);
   timer = new Timer();
+  this->overrun = overrun;
 }
 
 void OperatorPickup2Command::Initialize()
@@ -23,7 +23,7 @@ void OperatorPickup2Command::Execute()
 
 bool OperatorPickup2Command::IsFinished()
 {
-  return timer->HasPeriodPassed(PICKUP_WHEEL_OVERRUN);
+  return timer->HasPeriodPassed(overrun);
 }
 
 void OperatorPickup2Command::End()
