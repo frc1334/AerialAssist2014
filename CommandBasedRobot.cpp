@@ -34,7 +34,7 @@ private:
     autoMode->AddObject("Just Friggin Drive", new AutonomousDriveCommand(1.0f, 0.0f, 2.0));
     autoMode->AddObject("Ram the one point goal", new AutonomousModeRamGoal());
     autoMode->AddObject("Low Goal", new AutonomousModeLowGoal());
-    SmartDashboard::PutData("Autonomous Mode", autoMode);
+    SmartDashboard::PutData("Autonomous Mode", autoMode);;
   }
 
   /** Initializes an autonomous session */
