@@ -1,0 +1,3 @@
+[submodule "cheesyvision"]
+	path = cheesyvision
+	url = git://github.com/Team254/CheesyVision.git
