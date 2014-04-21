@@ -10,6 +10,7 @@
 #include "AutonomousCoastCommand.h"
 #include "AutonomousLowGearCommand.h"
 #include "DriveLaunchReleaseCommand.h"
+#include "OperatorPassCommand.h"
 #include "../Timing.h"
 
 AutonomousModeRamGoal::AutonomousModeRamGoal()
