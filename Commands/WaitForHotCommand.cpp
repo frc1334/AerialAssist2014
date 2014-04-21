@@ -1,13 +1,13 @@
 #include "Commands/WaitForHotCommand.h"
 
 WaitForHotCommand::WaitForHotCommand(double timeout) :
-  Command("WaitForHot", timeout)
+  CommandBase("WaitForHot", timeout)
 {
   Requires(vision);
 }
 
 WaitForHotCommand::WaitForHotCommand(const char *name, double timeout) :
-  Command(name, timeout)
+  CommandBase(name, timeout)
 {
 }
 
