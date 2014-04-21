@@ -7,7 +7,9 @@
 #include "Commands/AutonomousModeRamGoal.h"
 #include "Commands/AutonomousModeLowGoal.h"
 #include "Commands/AutonomousDriveCommand.h"
+#include "Commands/AutonomousModeCheesyBall.h"
 #include "Subsystems/CatapultSubsystem.h"
+#include "Libraries/CheesyVisionServer.h"
 #include "Robotmap.h"
 
 /**
@@ -34,6 +36,7 @@ private:
     autoMode->AddObject("Just Friggin Drive", new AutonomousDriveCommand(1.0f, 0.0f, 2.0));
     autoMode->AddObject("Ram the one point goal", new AutonomousModeRamGoal());
     autoMode->AddObject("Low Goal", new AutonomousModeLowGoal());
+    autoMode->AddObject("Low Goal", new AutonomousModeChessyBall());
     SmartDashboard::PutData("Autonomous Mode", autoMode);;
   }
 
@@ -74,6 +77,27 @@ private:
   {
     //printf("Switch readout: %f", CommandBase::catapult->getWinchLimitSwitch() ? 1.0f : 0.0f);
     //lw->Run();
+  }
+
+  virtual void DisabledInit()
+  {
+    CheesyVisionServer *cheeseView = CheesyVisionServer::GetInstance();
+    shooterArm->Disable();
+    cheeseView->StartSamplingCounts();
+    cheeseView->StartListening();
+  }
+
+  virtual void DisabledPeriodic()
+  {
+    CheesyVisionServer *cheeseView = CheesyVisionServer::GetInstance();
+    
+    SmartDashboard::PutNumber("CheeseLeft:", cheeseView->GetLeftStatus());
+    SmartDashboard::PutNumber("CheeseRight:", cheeseView->GetRightStatus());
+    SmartDashboard::PutNumber("CheeseLeft Count:", cheeseView->GetLeftCount());
+    SmartDashboard::PutNumber("CheeseRight Count:", cheeseView->GetRightCount());
+    SmartDashboard::PutNumber("CheeseTotal Count:", cheeseView->GetTotalCount());
+
+    SmartDashboard::PutBoolean("Cheesy Connected:", cheeseView->HasClientConnection());
   }
 };
 
