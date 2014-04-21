@@ -90,7 +90,7 @@ private:
   virtual void DisabledPeriodic()
   {
     CheesyVisionServer *cheeseView = CheesyVisionServer::GetInstance();
-    
+
     SmartDashboard::PutNumber("CheeseLeft:", cheeseView->GetLeftStatus());
     SmartDashboard::PutNumber("CheeseRight:", cheeseView->GetRightStatus());
     SmartDashboard::PutNumber("CheeseLeft Count:", cheeseView->GetLeftCount());
