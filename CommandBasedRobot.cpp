@@ -36,7 +36,7 @@ private:
     autoMode->AddObject("Just Friggin Drive", new AutonomousDriveCommand(1.0f, 0.0f, 2.0));
     autoMode->AddObject("Ram the one point goal", new AutonomousModeRamGoal());
     autoMode->AddObject("Low Goal", new AutonomousModeLowGoal());
-    autoMode->AddObject("Low Goal", new AutonomousModeChessyBall());
+    autoMode->AddObject("Cheesy One Ball", new AutonomousModeCheesyBall());
     SmartDashboard::PutData("Autonomous Mode", autoMode);;
   }
 
@@ -82,7 +82,7 @@ private:
   virtual void DisabledInit()
   {
     CheesyVisionServer *cheeseView = CheesyVisionServer::GetInstance();
-    shooterArm->Disable();
+    //shooterArm->Disable(); <- this is why you don't copy/paste, kids :P
     cheeseView->StartSamplingCounts();
     cheeseView->StartListening();
   }
