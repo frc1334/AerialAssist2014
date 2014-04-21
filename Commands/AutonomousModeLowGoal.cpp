@@ -8,6 +8,7 @@
 #include "AutonomousPickupCommand.h"
 #include "AutonomousDriveCommand.h"
 #include "AutonomousCoastCommand.h"
+#include "OperatorPassCommand.h"
 #include "AutonomousLowGearCommand.h"
 #include "DriveLaunchReleaseCommand.h"
 #include "../Timing.h"
