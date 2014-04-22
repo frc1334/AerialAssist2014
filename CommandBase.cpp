@@ -1,6 +1,10 @@
 #include "CommandBase.h"
 #include "Commands/Scheduler.h"
 
+CommandBase::CommandBase(const char *name, double timeout) : Command(name, timeout)
+{
+}
+
 CommandBase::CommandBase(const char *name) : Command(name)
 {
 }

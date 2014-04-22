@@ -15,6 +15,7 @@
 class CommandBase: public Command
 {
 public:
+  CommandBase(const char* name, double timeout);
   CommandBase(const char* name);
   CommandBase();
   /** Inits the subsystems */
