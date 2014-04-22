@@ -8,6 +8,7 @@
 #include "Commands/AutonomousModeLowGoal.h"
 #include "Commands/AutonomousDriveCommand.h"
 #include "Commands/AutonomousModeCheesyBall.h"
+#include "Commands/AutonomousModeMagicalMystery.h"
 #include "Subsystems/CatapultSubsystem.h"
 #include "Libraries/CheesyVisionServer.h"
 #include "Robotmap.h"
@@ -37,6 +38,7 @@ private:
     autoMode->AddObject("Ram the one point goal", new AutonomousModeRamGoal());
     autoMode->AddObject("Low Goal", new AutonomousModeLowGoal());
     autoMode->AddObject("Cheesy One Ball", new AutonomousModeCheesyBall());
+    autoMode->AddObject("Magical Mystery Mode (stand clear)", new AutonomousModeMagicalMystery());
     SmartDashboard::PutData("Autonomous Mode", autoMode);;
   }
 
